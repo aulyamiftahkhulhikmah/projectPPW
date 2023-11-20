@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Aulya Miftahkhul Hikmah/200411100050</title>
+    <title>Tugas Berita &#8212; Aulya Miftahkhul Hikmah/200411100050</title>
   
   
   
@@ -65,8 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PTA UNIVERSITAS TRUNOJOYO MADURA" href="notebooks.html" />
-    <link rel="prev" title="Selamat Datang" href="intro.html" />
+    <link rel="prev" title="PTA UNIVERSITAS TRUNOJOYO MADURA" href="notebooks2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,9 +167,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas PPW</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">PTA UNIVERSITAS TRUNOJOYO MADURA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">Tugas Berita</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">PTA UNIVERSITAS TRUNOJOYO MADURA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Berita</a></li>
 </ul>
 
     </div>
@@ -372,9 +371,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -385,19 +382,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Tugas Berita</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -407,207 +396,108 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>#Crawling PTA Trunojoyo</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-berita">
+<h1>Tugas Berita<a class="headerlink" href="#tugas-berita" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">csv</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">:</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="p">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="p">:</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;accept&#39;</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;accept-encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, deflate&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;accept-language&#39;</span><span class="p">:</span> <span class="s1">&#39;en,mr;q=0.9&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36&#39;</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_judul</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">list_penulis</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">list_pembimbing1</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">list_pembimbing2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">list_abstak</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pta.trunojoyo.ac.id/c_search/byprod/10/&quot;</span>
-<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">171</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;content_journal&quot;</span><span class="p">)</span>
-    <span class="n">elements</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;data-id&quot;</span><span class="p">:</span><span class="s2">&quot;id-1&quot;</span><span class="p">})</span>
-<span class="c1">#     print(elements)</span>
-    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span>
-        <span class="n">info</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">info_nama</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
-<span class="c1">#         print(info_nama)</span>
-        <span class="n">link_abstrak</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
-<span class="c1">#         ekstrak info</span>
-        <span class="n">judul</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
-        <span class="n">penulis</span><span class="p">,</span> <span class="n">pembimbing1</span><span class="p">,</span> <span class="n">pembimbing2</span> <span class="o">=</span> <span class="p">[</span><span class="n">nama</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">nama</span> <span class="ow">in</span> <span class="n">info_nama</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
 
-<span class="c1">#         ekstrak abstrak</span>
+<span class="c1"># Unduh konten halaman web berita</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.antaranews.com/berita/3799257/hoaks-kpu-tolak-pendaftaran-gibran-rakabuming-sebagai-bakal-cawapres-pada-25-oktober&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
 
-<span class="c1">#         print(link_abstrak)</span>
-        <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link_abstrak</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">soup_abstrak</span> <span class="o">=</span>  <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-        <span class="n">results_abstrak</span> <span class="o">=</span> <span class="n">soup_abstrak</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+<span class="c1"># Parsing halaman web menggunakan BeautifulSoup</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
 
-        <span class="n">abstrak</span> <span class="o">=</span> <span class="n">results_abstrak</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<span class="c1"># Ekstraksi teks dari elemen-elemen yang berisi berita</span>
+<span class="n">article</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span> <span class="p">,</span><span class="n">class_</span><span class="o">=</span><span class="s2">&quot;post-content clearfix&quot;</span><span class="p">)</span>  <span class="c1"># Sesuaikan dengan struktur HTML halaman web berita</span>
+<span class="n">article_text</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
 
-        <span class="n">list_judul</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">judul</span><span class="p">)</span>
-        <span class="n">list_penulis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">penulis</span><span class="p">)</span>
-        <span class="n">list_pembimbing1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pembimbing1</span><span class="p">)</span>
-        <span class="n">list_pembimbing2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pembimbing2</span><span class="p">)</span>
-        <span class="n">list_abstak</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abstrak</span><span class="p">)</span>
+<span class="c1"># Tokenisasi teks menjadi kalimat menggunakan nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>  <span class="c1"># Pastikan Anda sudah mengunduh tokenisasi kalimat nltk</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">article_text</span><span class="p">)</span>
 
-    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pta.trunojoyo.ac.id/c_search/byprod/10/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">):</span>
-        <span class="k">break</span>
+<span class="c1"># Cetak kalimat-kalimat</span>
+<span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-2-1e80dc240576&gt;</span> in <span class="ni">&lt;cell line: 8&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> 
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1">#         print(link_abstrak)</span>
-<span class="ne">---&gt; </span><span class="mi">25</span>         <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link_abstrak</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>         <span class="n">soup_abstrak</span> <span class="o">=</span>  <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">results_abstrak</span> <span class="o">=</span> <span class="n">soup_abstrak</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jakarta (ANTARA/JACX) – Ketua Umum Partai Gerindra sekaligus bakal calon presiden Prabowo Subianto, secara resmi mengumumkan bahwa putra sulung Presiden Joko Widodo, Gibran Rakabuming Raka, telah dipilih sebagai bakal cawapres dari Partai Gerindra pada Minggu, (22/10/2023).
+Sebuah unggahan video di Facebook berdurasi delapan menit menarasikan bahwa KPU menolak pendaftaran Gibran karena dinyatakan cacat hukum.
+Dalam video tersebut, narator juga menyebutkan pakar hukum tata negara Denny Indrayana menyebut putusan MK tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
+Berikut narasi dalam unggahan tersebut:
+“NEWS HARI INI ~ DINYATAKAN C4CAT HUKUM KPU TOL4K PENDAFTAN CAWAPRES GIBRAN-- - POLITIK TERBARU”
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="s2"> </span>
-<span class="ne">---&gt; </span><span class="mi">73</span><span class="s2">     return request(&quot;get&quot;, url, params=params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="s2"> </span>
+Namun, benarkah KPU menolak pendaftaran Gibran Rakabuming sebagai bakal cawapres?
+Unggahan video hoaks yang menarasikan KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober.
+Faktanya, belum ada informasi resmi mengenai hal tersebut.
+(Facebook)
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span><span class="s2">     # cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">     with sessions.Session() as session:</span>
-<span class="ne">---&gt; </span><span class="mi">59</span><span class="s2">         return session.request(method=method, url=url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="s2"> </span>
+Penjelasan:
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="s2">         }</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="s2">         send_kwargs.update(settings)</span>
-<span class="ne">--&gt; </span><span class="mi">589</span><span class="s2">         resp = self.send(prep, **send_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="s2">         return resp</span>
+Berdasarkan penelusuran, dalam video tersebut, narator hanya membacakan narasi dari laman CNN yang berjudul “Denny Indrayana: Putusan MK Tak Bisa Jadi Dasar Gibran Daftar Pilpres”.
+Dalam artikel tersebut, Pakar hukum tata negara Denny Indrayana menyebut putusan Mahkamah Konstitusi (MK) tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
+Denny beralasan ada konflik kepentingan Ketua MK Anwar Usman dalam putusan itu.
+Download Apps CNN Indonesia sekarangn Anwar dengan Gibran-bakal cawapres yang bisa mendaftar karena putusan baru MK.
+Selain itu, KPU telah menerima berkas pendaftaran Prabowo Subianto dan Gibran Rakabuming Raka sebagai bacapres dan bacawapres, Rabu (25/10), videonya bisa dilihat di laman ANTARA.
+Dengan demikian, klaim KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober merupakan hoaks.
+Klaim: KPU tolak pendaftaran Gibran Rakabuming sebagai bakal cawapres pada 25 Oktober
+Rating: Hoaks
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span><span class="s2">         # Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">703</span><span class="s2">         r = adapter.send(request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span><span class="s2">         # Total elapsed time of the request (approximately)</span>
+Cek fakta: Hoaks!
+Gibran mengundurkan diri dari PDIP dan bergabung dengan Prabowo pada 14 Oktober
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">486</span><span class="s2">             resp = conn.urlopen(</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span><span class="s2">                 method=request.method,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span><span class="s2">                 url=url,</span>
+Cek fakta: Hoaks!
+Foto Jokowi temui Anies dan tawarkan Gibran jadi bakal cawapres
 
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span><span class="s2">             # Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">791</span><span class="s2">             response = self._make_request(</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span><span class="s2">                 conn,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span><span class="s2">                 method,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">             # Trigger any extra validation we need to do.</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">468</span><span class="s2">                 self._validate_conn(conn)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">             except (SocketTimeout, BaseSSLError) as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="s2">                 self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span><span class="s2">         # Force connect early to allow us to validate the connection.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span><span class="s2">         if conn.is_closed:</span>
-<span class="ne">-&gt; </span><span class="mi">1097</span><span class="s2">             conn.connect()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span><span class="s2">         if not conn.is_verified:</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="s2">             )</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">642</span><span class="s2">         sock_and_verified = _ssl_wrap_socket_and_match_hostname(</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="s2">             sock=sock,</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span><span class="s2">             cert_reqs=self.cert_reqs,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">_ssl_wrap_socket_and_match_hostname</span><span class="nt">(sock, cert_reqs, ssl_version, ssl_minimum_version, ssl_maximum_version, cert_file, key_file, key_password, ca_certs, ca_cert_dir, ca_cert_data, assert_hostname, assert_fingerprint, server_hostname, ssl_context, tls_in_tls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">781</span><span class="s2">             server_hostname = normalized</span>
-<span class="g g-Whitespace">    </span><span class="mi">782</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">783</span><span class="s2">     ssl_sock = ssl_wrap_socket(</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span><span class="s2">         sock=sock,</span>
-<span class="g g-Whitespace">    </span><span class="mi">785</span><span class="s2">         keyfile=key_file,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">ssl_wrap_socket</span><span class="nt">(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data, tls_in_tls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">         pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">471</span><span class="s2">     ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="s2">     return ssl_sock</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="s2"> </span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/ssl_.py</span> in <span class="ni">_ssl_wrap_socket_impl</span><span class="nt">(sock, ssl_context, tls_in_tls, server_hostname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span><span class="s2">         return SSLTransport(sock, ssl_context, server_hostname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">515</span><span class="s2">     return ssl_context.wrap_socket(sock, server_hostname=server_hostname)</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">wrap_socket</span><span class="nt">(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="s2">         # SSLSocket class handles server_hostname encoding before it calls</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="s2">         # ctx._wrap_socket()</span>
-<span class="ne">--&gt; </span><span class="mi">513</span><span class="s2">         return self.sslsocket_class._create(</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2">             sock=sock,</span>
-<span class="g g-Whitespace">    </span><span class="mi">515</span><span class="s2">             server_side=server_side,</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">_create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span><span class="s2">                         # non-blocking</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span><span class="s2">                         raise ValueError(&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span><span class="s2">                     self.do_handshake()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span><span class="s2">             except (OSError, ValueError):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span><span class="s2">                 self.close()</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">do_handshake</span><span class="nt">(self, block)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1340</span><span class="s2">             if timeout == 0.0 and block:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1341</span><span class="s2">                 self.settimeout(None)</span>
-<span class="ne">-&gt; </span><span class="mi">1342</span><span class="s2">             self._sslobj.do_handshake()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1343</span><span class="s2">         finally:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1344</span><span class="s2">             self.settimeout(timeout)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewarta: Tim JACXEditor: Indriani				COPYRIGHT © ANTARA 2023
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
 </pre></div>
 </div>
 </div>
 </div>
+<p>##TF-IDF</p>
+<p>Index dalam bentuk angka</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s2">&quot;Judul&quot;</span> <span class="p">:</span> <span class="n">list_judul</span><span class="p">,</span>
-    <span class="s2">&quot;Penulis&quot;</span> <span class="p">:</span> <span class="n">list_penulis</span><span class="p">,</span>
-    <span class="s2">&quot;Pembimbing I&quot;</span> <span class="p">:</span> <span class="n">list_pembimbing1</span><span class="p">,</span>
-    <span class="s2">&quot;Pembimbing II&quot;</span> <span class="p">:</span> <span class="n">list_pembimbing2</span><span class="p">,</span>
-    <span class="s2">&quot;Abstrak&quot;</span> <span class="p">:</span> <span class="n">list_abstak</span>
-<span class="p">})</span>
-<span class="n">df</span>
-<span class="c1">#df.to_csv(&quot;ptaUtm.csv&quot;, index=True)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame to store TF-IDF values</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="c1"># Create the TF-IDF vectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+
+<span class="c1"># Extract feature names (words) and TF-IDF values</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+<span class="n">tfidf_values</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+<span class="c1"># Create a DataFrame from TF-IDF values</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="c1"># Add a new column for sentences</span>
+<span class="n">tfidf_df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentences</span>
+
+<span class="c1"># Reorder columns to have &#39;Kalimat&#39; at the beginning</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">tfidf_df</span><span class="p">[[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">feature_names</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+
+<span class="c1"># Display the resulting DataFrame</span>
+<span class="n">tfidf_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-21e18c91-b4a1-4baf-914e-c6b44bae1181" class="colab-df-container">
+  <div id="df-6b4c86a6-2b1c-4358-b953-caed0ac7b9d7" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -626,118 +516,406 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Judul</th>
-      <th>Penulis</th>
-      <th>Pembimbing I</th>
-      <th>Pembimbing II</th>
-      <th>Abstrak</th>
+      <th>Kalimat</th>
+      <th>10</th>
+      <th>14</th>
+      <th>2023</th>
+      <th>2024</th>
+      <th>22</th>
+      <th>25</th>
+      <th>ada</th>
+      <th>anggotapewarta</th>
+      <th>anies</th>
+      <th>...</th>
+      <th>tol4k</th>
+      <th>tolak</th>
+      <th>tunggu</th>
+      <th>umum</th>
+      <th>unggahan</th>
+      <th>usman</th>
+      <th>video</th>
+      <th>videonya</th>
+      <th>widodo</th>
+      <th>yang</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE \...</td>
-      <td>A.Ubaidillah S.Kom</td>
-      <td>Budi Setyono M.T</td>
-      <td>Hermawan S.T</td>
-      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>\n\r\nJakarta (ANTARA/JACX) – Ketua Umum Parta...</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
-      <td>M. Basith Ardianto,</td>
-      <td>Drs. Budi Soesilo, MT</td>
-      <td>Koko Joni, ST</td>
-      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>Sebuah unggahan video di Facebook berdurasi de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.217406</td>
+      <td>0.000000</td>
+      <td>0.197076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>RANCANG BANGUN APLIKASI PROXY SERVER UNTUK\r\n...</td>
-      <td>Akhmad Suyandi, S.Kom</td>
-      <td>Drs. Budi Soesilo, M.T</td>
-      <td>Hermawan, ST, MT</td>
-      <td>Web server adalah sebuah perangkat lunak serve...</td>
+      <td>Dalam video tersebut, narator juga menyebutkan...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194200</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.157101</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
-      <td>Heri Supriyanto</td>
-      <td>Mulaab, S.Si., M.Kom</td>
-      <td>Firli Irhamni, ST., M.Kom</td>
-      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>Berikut narasi dalam unggahan tersebut:\n“NEWS...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.228351</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.176952</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
-      <td>Septian Rahman Hakim</td>
-      <td>Arik Kurniawati, S.Kom., M.T.</td>
-      <td>Haryanto, S.T., M.T.</td>
-      <td>Seiring perkembangan teknologi yang ada diduni...</td>
-    </tr>
-    <tr>
-      <th>...</th>
+      <td>Unggahan video hoaks yang menarasikan KPU tola...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>...</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Faktanya, belum ada informasi resmi mengenai h...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.330048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(Facebook)\n\nPenjelasan:\r\n\r\nBerdasarkan p...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.160658</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.177231</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Dalam artikel tersebut, Pakar hukum tata negar...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194207</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Denny beralasan ada konflik kepentingan Ketua ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.293538</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.338048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
-      <th>840</th>
-      <td>PENERAPAN NON-NEGATIVE MATRIX FACTORIZATION DA...</td>
-      <td>Moh. Nurun Fitriantama</td>
-      <td>Dr. Noor Ifada, S.T., M.ISD.</td>
-      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
-      <td>Dengan berkembangnya teknologi yang pesat dan ...</td>
+      <th>9</th>
+      <td>Download Apps CNN Indonesia sekarangn Anwar de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.232780</td>
     </tr>
     <tr>
-      <th>841</th>
-      <td>PENERAPAN METODE TECHNIQUE FOR OTHERS PREFEREN...</td>
-      <td>GILANG ABDURRACHMAN PUTRA</td>
-      <td>SRI HERAWATI, S.KOM., M.KOM</td>
-      <td>EKA MALA SARI R. S.KOM., M.KOM</td>
-      <td>Perkembangan teknologi internet yang sangat pe...</td>
+      <th>10</th>
+      <td>Selain itu, KPU telah menerima berkas pendafta...</td>
+      <td>0.199312</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.161236</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229534</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
-      <th>842</th>
-      <td>PEMANFAATAN METODE TECHNIQUE FOR ORDER PREFERE...</td>
-      <td>Abi Dzar Giffary</td>
-      <td>Achmad Jauhari, S.T., M.Kom.</td>
-      <td>Sri Herawati, S.Kom., M.Kom.</td>
-      <td>ABSTRAK\n\nPenilaian kinerja karyawan merupaka...</td>
+      <th>11</th>
+      <td>Dengan demikian, klaim KPU tolak pendaftaran G...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.255991</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.282399</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
-      <th>843</th>
-      <td>ANALISIS MULTIPATH ROUTING BERBASIS ALGORITHMA...</td>
-      <td>Imam Achmad Al Abidulloh</td>
-      <td>Dwi Kuswanto, S.Pd., M.T.</td>
-      <td>Iwan Santosa, S.T., M.T.</td>
-      <td>Algoritma routing pada jaringan SDN sangat men...</td>
+      <th>12</th>
+      <td>Klaim: KPU tolak pendaftaran Gibran Rakabuming...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229955</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.253677</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
-      <th>844</th>
-      <td>Sistem Pendukung Keputusan Posisi Pemain Tenga...</td>
-      <td>Eko cahyono</td>
-      <td>Muhammad Ali Syakur, S.Si., M.T</td>
-      <td>Sigit susanto putra., S.Kom., M.Kom</td>
-      <td>Sepakbola merupakan permainan beregu yang dima...</td>
+      <th>13</th>
+      <td>Gibran mengundurkan diri dari PDIP dan bergabu...</td>
+      <td>0.000000</td>
+      <td>0.313111</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Foto Jokowi temui Anies dan tawarkan Gibran ja...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.184482</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.212456</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
     </tr>
   </tbody>
 </table>
-<p>845 rows × 5 columns</p>
+<p>15 rows × 160 columns</p>
 </div>
     <div class="colab-df-buttons">
-
+      
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-21e18c91-b4a1-4baf-914e-c6b44bae1181')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6b4c86a6-2b1c-4358-b953-caed0ac7b9d7')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
-
+      
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
   </svg>
     </button>
-
+    
   <style>
     .colab-df-container {
       display:flex;
@@ -781,12 +959,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-21e18c91-b4a1-4baf-914e-c6b44bae1181 button.colab-df-convert');
+        document.querySelector('#df-6b4c86a6-2b1c-4358-b953-caed0ac7b9d7 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-21e18c91-b4a1-4baf-914e-c6b44bae1181');
+        const element = document.querySelector('#df-6b4c86a6-2b1c-4358-b953-caed0ac7b9d7');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -804,138 +982,1623 @@ document.write(`
       }
     </script>
   </div>
-
-
-<div id="df-a31e9f56-48a8-4323-93de-5e9d94deb207">
-  <button class="colab-df-quickchart" onclick="quickchart('df-a31e9f56-48a8-4323-93de-5e9d94deb207')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-a31e9f56-48a8-4323-93de-5e9d94deb207 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
+  
     </div>
   </div>
-</div></div>
+  </div></div>
 </div>
+<p>Index dalam bentuk kalimat 1,2 dst</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame to store TF-IDF values</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="c1"># Create the TF-IDF vectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+
+<span class="c1"># Extract feature names (words) and TF-IDF values</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+<span class="n">tfidf_values</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+<span class="c1"># Create a DataFrame from TF-IDF values</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="c1"># Add a new column for sentences</span>
+<span class="n">tfidf_df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentences</span>
+
+<span class="c1"># Reorder columns to have &#39;Kalimat&#39; at the beginning</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">tfidf_df</span><span class="p">[[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">feature_names</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+
+<span class="c1"># Change the index to represent &quot;Kalimat 1,&quot; &quot;Kalimat 2,&quot; etc.</span>
+<span class="n">tfidf_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tfidf_df</span><span class="p">))]</span>
+
+<span class="c1"># Display the resulting DataFrame</span>
+<span class="n">tfidf_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-1039e1ca-67e7-4ee9-bc58-e51eda75ad77" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kalimat</th>
+      <th>10</th>
+      <th>14</th>
+      <th>2023</th>
+      <th>2024</th>
+      <th>22</th>
+      <th>25</th>
+      <th>ada</th>
+      <th>anggotapewarta</th>
+      <th>anies</th>
+      <th>...</th>
+      <th>tol4k</th>
+      <th>tolak</th>
+      <th>tunggu</th>
+      <th>umum</th>
+      <th>unggahan</th>
+      <th>usman</th>
+      <th>video</th>
+      <th>videonya</th>
+      <th>widodo</th>
+      <th>yang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Kalimat 1</th>
+      <td>\n\r\nJakarta (ANTARA/JACX) – Ketua Umum Parta...</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 2</th>
+      <td>Sebuah unggahan video di Facebook berdurasi de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.217406</td>
+      <td>0.000000</td>
+      <td>0.197076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 3</th>
+      <td>Dalam video tersebut, narator juga menyebutkan...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194200</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.157101</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 4</th>
+      <td>Berikut narasi dalam unggahan tersebut:\n“NEWS...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.228351</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.176952</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 5</th>
+      <td>Unggahan video hoaks yang menarasikan KPU tola...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+    </tr>
+    <tr>
+      <th>Kalimat 6</th>
+      <td>Faktanya, belum ada informasi resmi mengenai h...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.330048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 7</th>
+      <td>(Facebook)\n\nPenjelasan:\r\n\r\nBerdasarkan p...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.160658</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.177231</td>
+    </tr>
+    <tr>
+      <th>Kalimat 8</th>
+      <td>Dalam artikel tersebut, Pakar hukum tata negar...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194207</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 9</th>
+      <td>Denny beralasan ada konflik kepentingan Ketua ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.293538</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.338048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 10</th>
+      <td>Download Apps CNN Indonesia sekarangn Anwar de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.232780</td>
+    </tr>
+    <tr>
+      <th>Kalimat 11</th>
+      <td>Selain itu, KPU telah menerima berkas pendafta...</td>
+      <td>0.199312</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.161236</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229534</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 12</th>
+      <td>Dengan demikian, klaim KPU tolak pendaftaran G...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.255991</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.282399</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 13</th>
+      <td>Klaim: KPU tolak pendaftaran Gibran Rakabuming...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229955</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.253677</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 14</th>
+      <td>Gibran mengundurkan diri dari PDIP dan bergabu...</td>
+      <td>0.000000</td>
+      <td>0.313111</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 15</th>
+      <td>Foto Jokowi temui Anies dan tawarkan Gibran ja...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.184482</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.212456</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>15 rows × 160 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1039e1ca-67e7-4ee9-bc58-e51eda75ad77')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-1039e1ca-67e7-4ee9-bc58-e51eda75ad77 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-1039e1ca-67e7-4ee9-bc58-e51eda75ad77');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="c1"># Indeks kalimat yang akan dibandingkan</span>
+<span class="n">sentence1_index</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Ganti dengan indeks kalimat pertama yang ingin Anda bandingkan</span>
+<span class="n">sentence2_index</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Ganti dengan indeks kalimat kedua yang ingin Anda bandingkan</span>
+
+<span class="c1"># Ambil vektor TF-IDF untuk kedua kalimat</span>
+<span class="n">tfidf_vector1</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="p">[</span><span class="n">sentence1_index</span><span class="p">]</span>
+<span class="n">tfidf_vector2</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="p">[</span><span class="n">sentence2_index</span><span class="p">]</span>
+
+<span class="c1"># Hitung cosine similarity antara kedua vektor</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_vector1</span><span class="p">,</span> <span class="n">tfidf_vector2</span><span class="p">)</span>
+
+<span class="c1"># Cetak hasil cosine similarity</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cosine Similarity antara Kalimat </span><span class="si">{</span><span class="n">sentence1_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> dan Kalimat </span><span class="si">{</span><span class="n">sentence2_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarity</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cosine Similarity antara Kalimat 1 dan Kalimat 2: 0.0412
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Cetak hasil similarity_matrix</span>
+<span class="n">num_sentences</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>  <span class="c1"># Jumlah kalimat</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_sentences</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_sentences</span><span class="p">):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cosine Similarity antara Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> dan Kalimat </span><span class="si">{</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarity</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cosine Similarity antara Kalimat 1 dan Kalimat 2: 0.0412
+Cosine Similarity antara Kalimat 1 dan Kalimat 3: 0.0413
+Cosine Similarity antara Kalimat 1 dan Kalimat 4: 0.0818
+Cosine Similarity antara Kalimat 1 dan Kalimat 5: 0.0893
+Cosine Similarity antara Kalimat 1 dan Kalimat 6: 0.0474
+Cosine Similarity antara Kalimat 1 dan Kalimat 7: 0.0278
+Cosine Similarity antara Kalimat 1 dan Kalimat 8: 0.0413
+Cosine Similarity antara Kalimat 1 dan Kalimat 9: 0.0421
+Cosine Similarity antara Kalimat 1 dan Kalimat 10: 0.0591
+Cosine Similarity antara Kalimat 1 dan Kalimat 11: 0.1785
+Cosine Similarity antara Kalimat 1 dan Kalimat 12: 0.0838
+Cosine Similarity antara Kalimat 1 dan Kalimat 13: 0.1200
+Cosine Similarity antara Kalimat 1 dan Kalimat 14: 0.0906
+Cosine Similarity antara Kalimat 1 dan Kalimat 15: 0.0941
+Cosine Similarity antara Kalimat 2 dan Kalimat 3: 0.1014
+Cosine Similarity antara Kalimat 2 dan Kalimat 4: 0.2517
+Cosine Similarity antara Kalimat 2 dan Kalimat 5: 0.2929
+Cosine Similarity antara Kalimat 2 dan Kalimat 6: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 7: 0.0887
+Cosine Similarity antara Kalimat 2 dan Kalimat 8: 0.0704
+Cosine Similarity antara Kalimat 2 dan Kalimat 9: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 10: 0.0750
+Cosine Similarity antara Kalimat 2 dan Kalimat 11: 0.1026
+Cosine Similarity antara Kalimat 2 dan Kalimat 12: 0.0858
+Cosine Similarity antara Kalimat 2 dan Kalimat 13: 0.0771
+Cosine Similarity antara Kalimat 2 dan Kalimat 14: 0.0119
+Cosine Similarity antara Kalimat 2 dan Kalimat 15: 0.0162
+Cosine Similarity antara Kalimat 3 dan Kalimat 4: 0.1643
+Cosine Similarity antara Kalimat 3 dan Kalimat 5: 0.0972
+Cosine Similarity antara Kalimat 3 dan Kalimat 6: 0.0352
+Cosine Similarity antara Kalimat 3 dan Kalimat 7: 0.2844
+Cosine Similarity antara Kalimat 3 dan Kalimat 8: 0.8499
+Cosine Similarity antara Kalimat 3 dan Kalimat 9: 0.1624
+Cosine Similarity antara Kalimat 3 dan Kalimat 10: 0.1481
+Cosine Similarity antara Kalimat 3 dan Kalimat 11: 0.0670
+Cosine Similarity antara Kalimat 3 dan Kalimat 12: 0.0509
+Cosine Similarity antara Kalimat 3 dan Kalimat 13: 0.0458
+Cosine Similarity antara Kalimat 3 dan Kalimat 14: 0.0095
+Cosine Similarity antara Kalimat 3 dan Kalimat 15: 0.0595
+Cosine Similarity antara Kalimat 4 dan Kalimat 5: 0.2659
+Cosine Similarity antara Kalimat 4 dan Kalimat 6: 0.0359
+Cosine Similarity antara Kalimat 4 dan Kalimat 7: 0.0968
+Cosine Similarity antara Kalimat 4 dan Kalimat 8: 0.1643
+Cosine Similarity antara Kalimat 4 dan Kalimat 9: 0.0319
+Cosine Similarity antara Kalimat 4 dan Kalimat 10: 0.0782
+Cosine Similarity antara Kalimat 4 dan Kalimat 11: 0.1017
+Cosine Similarity antara Kalimat 4 dan Kalimat 12: 0.1994
+Cosine Similarity antara Kalimat 4 dan Kalimat 13: 0.2100
+Cosine Similarity antara Kalimat 4 dan Kalimat 14: 0.0194
+Cosine Similarity antara Kalimat 4 dan Kalimat 15: 0.1051
+Cosine Similarity antara Kalimat 5 dan Kalimat 6: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 7: 0.1093
+Cosine Similarity antara Kalimat 5 dan Kalimat 8: 0.0543
+Cosine Similarity antara Kalimat 5 dan Kalimat 9: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 10: 0.1125
+Cosine Similarity antara Kalimat 5 dan Kalimat 11: 0.1736
+Cosine Similarity antara Kalimat 5 dan Kalimat 12: 0.5912
+Cosine Similarity antara Kalimat 5 dan Kalimat 13: 0.5938
+Cosine Similarity antara Kalimat 5 dan Kalimat 14: 0.1869
+Cosine Similarity antara Kalimat 5 dan Kalimat 15: 0.0412
+Cosine Similarity antara Kalimat 6 dan Kalimat 7: 0.0360
+Cosine Similarity antara Kalimat 6 dan Kalimat 8: 0.0352
+Cosine Similarity antara Kalimat 6 dan Kalimat 9: 0.0969
+Cosine Similarity antara Kalimat 6 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 11: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 12: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 7 dan Kalimat 8: 0.2206
+Cosine Similarity antara Kalimat 7 dan Kalimat 9: 0.1341
+Cosine Similarity antara Kalimat 7 dan Kalimat 10: 0.1876
+Cosine Similarity antara Kalimat 7 dan Kalimat 11: 0.0684
+Cosine Similarity antara Kalimat 7 dan Kalimat 12: 0.0113
+Cosine Similarity antara Kalimat 7 dan Kalimat 13: 0.0101
+Cosine Similarity antara Kalimat 7 dan Kalimat 14: 0.0527
+Cosine Similarity antara Kalimat 7 dan Kalimat 15: 0.0498
+Cosine Similarity antara Kalimat 8 dan Kalimat 9: 0.1624
+Cosine Similarity antara Kalimat 8 dan Kalimat 10: 0.1482
+Cosine Similarity antara Kalimat 8 dan Kalimat 11: 0.0670
+Cosine Similarity antara Kalimat 8 dan Kalimat 12: 0.0509
+Cosine Similarity antara Kalimat 8 dan Kalimat 13: 0.0458
+Cosine Similarity antara Kalimat 8 dan Kalimat 14: 0.0095
+Cosine Similarity antara Kalimat 8 dan Kalimat 15: 0.0237
+Cosine Similarity antara Kalimat 9 dan Kalimat 10: 0.1606
+Cosine Similarity antara Kalimat 9 dan Kalimat 11: 0.0585
+Cosine Similarity antara Kalimat 9 dan Kalimat 12: 0.0000
+Cosine Similarity antara Kalimat 9 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 9 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 9 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 11: 0.0379
+Cosine Similarity antara Kalimat 10 dan Kalimat 12: 0.1055
+Cosine Similarity antara Kalimat 10 dan Kalimat 13: 0.0764
+Cosine Similarity antara Kalimat 10 dan Kalimat 14: 0.0692
+Cosine Similarity antara Kalimat 10 dan Kalimat 15: 0.0582
+Cosine Similarity antara Kalimat 11 dan Kalimat 12: 0.1628
+Cosine Similarity antara Kalimat 11 dan Kalimat 13: 0.1462
+Cosine Similarity antara Kalimat 11 dan Kalimat 14: 0.1392
+Cosine Similarity antara Kalimat 11 dan Kalimat 15: 0.1011
+Cosine Similarity antara Kalimat 12 dan Kalimat 13: 0.6469
+Cosine Similarity antara Kalimat 12 dan Kalimat 14: 0.2438
+Cosine Similarity antara Kalimat 12 dan Kalimat 15: 0.0386
+Cosine Similarity antara Kalimat 13 dan Kalimat 14: 0.3626
+Cosine Similarity antara Kalimat 13 dan Kalimat 15: 0.0635
+Cosine Similarity antara Kalimat 14 dan Kalimat 15: 0.1081
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Nama kolom dan indeks untuk DataFrame</span>
+<span class="n">sentence_indices</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">))]</span>
+
+<span class="c1"># Buat DataFrame dari hasil cosine similarity</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">)</span>
+
+<span class="c1"># Cetak DataFrame</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-af97465b-4c89-4877-ac08-07d83cac5eff" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kalimat 1</th>
+      <th>Kalimat 2</th>
+      <th>Kalimat 3</th>
+      <th>Kalimat 4</th>
+      <th>Kalimat 5</th>
+      <th>Kalimat 6</th>
+      <th>Kalimat 7</th>
+      <th>Kalimat 8</th>
+      <th>Kalimat 9</th>
+      <th>Kalimat 10</th>
+      <th>Kalimat 11</th>
+      <th>Kalimat 12</th>
+      <th>Kalimat 13</th>
+      <th>Kalimat 14</th>
+      <th>Kalimat 15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Kalimat 1</th>
+      <td>1.000000</td>
+      <td>0.041239</td>
+      <td>0.041338</td>
+      <td>0.081805</td>
+      <td>0.089297</td>
+      <td>0.047360</td>
+      <td>0.027817</td>
+      <td>0.041340</td>
+      <td>0.042121</td>
+      <td>0.059117</td>
+      <td>0.178485</td>
+      <td>0.083752</td>
+      <td>0.120001</td>
+      <td>0.090561</td>
+      <td>0.094122</td>
+    </tr>
+    <tr>
+      <th>Kalimat 2</th>
+      <td>0.041239</td>
+      <td>1.000000</td>
+      <td>0.101385</td>
+      <td>0.251681</td>
+      <td>0.292930</td>
+      <td>0.000000</td>
+      <td>0.088738</td>
+      <td>0.070426</td>
+      <td>0.000000</td>
+      <td>0.074965</td>
+      <td>0.102600</td>
+      <td>0.085805</td>
+      <td>0.077078</td>
+      <td>0.011903</td>
+      <td>0.016153</td>
+    </tr>
+    <tr>
+      <th>Kalimat 3</th>
+      <td>0.041338</td>
+      <td>0.101385</td>
+      <td>1.000000</td>
+      <td>0.164272</td>
+      <td>0.097198</td>
+      <td>0.035173</td>
+      <td>0.284394</td>
+      <td>0.849904</td>
+      <td>0.162433</td>
+      <td>0.148147</td>
+      <td>0.066961</td>
+      <td>0.050946</td>
+      <td>0.045764</td>
+      <td>0.009488</td>
+      <td>0.059530</td>
+    </tr>
+    <tr>
+      <th>Kalimat 4</th>
+      <td>0.081805</td>
+      <td>0.251681</td>
+      <td>0.164272</td>
+      <td>1.000000</td>
+      <td>0.265861</td>
+      <td>0.035912</td>
+      <td>0.096750</td>
+      <td>0.164278</td>
+      <td>0.031940</td>
+      <td>0.078233</td>
+      <td>0.101693</td>
+      <td>0.199382</td>
+      <td>0.210034</td>
+      <td>0.019376</td>
+      <td>0.105057</td>
+    </tr>
+    <tr>
+      <th>Kalimat 5</th>
+      <td>0.089297</td>
+      <td>0.292930</td>
+      <td>0.097198</td>
+      <td>0.265861</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.109255</td>
+      <td>0.054321</td>
+      <td>0.000000</td>
+      <td>0.112501</td>
+      <td>0.173579</td>
+      <td>0.591212</td>
+      <td>0.593846</td>
+      <td>0.186886</td>
+      <td>0.041181</td>
+    </tr>
+    <tr>
+      <th>Kalimat 6</th>
+      <td>0.047360</td>
+      <td>0.000000</td>
+      <td>0.035173</td>
+      <td>0.035912</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.035969</td>
+      <td>0.035174</td>
+      <td>0.096882</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 7</th>
+      <td>0.027817</td>
+      <td>0.088738</td>
+      <td>0.284394</td>
+      <td>0.096750</td>
+      <td>0.109255</td>
+      <td>0.035969</td>
+      <td>1.000000</td>
+      <td>0.220595</td>
+      <td>0.134121</td>
+      <td>0.187649</td>
+      <td>0.068417</td>
+      <td>0.011293</td>
+      <td>0.010145</td>
+      <td>0.052705</td>
+      <td>0.049805</td>
+    </tr>
+    <tr>
+      <th>Kalimat 8</th>
+      <td>0.041340</td>
+      <td>0.070426</td>
+      <td>0.849904</td>
+      <td>0.164278</td>
+      <td>0.054321</td>
+      <td>0.035174</td>
+      <td>0.220595</td>
+      <td>1.000000</td>
+      <td>0.162439</td>
+      <td>0.148153</td>
+      <td>0.066964</td>
+      <td>0.050948</td>
+      <td>0.045766</td>
+      <td>0.009489</td>
+      <td>0.023704</td>
+    </tr>
+    <tr>
+      <th>Kalimat 9</th>
+      <td>0.042121</td>
+      <td>0.000000</td>
+      <td>0.162433</td>
+      <td>0.031940</td>
+      <td>0.000000</td>
+      <td>0.096882</td>
+      <td>0.134121</td>
+      <td>0.162439</td>
+      <td>1.000000</td>
+      <td>0.160601</td>
+      <td>0.058506</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 10</th>
+      <td>0.059117</td>
+      <td>0.074965</td>
+      <td>0.148147</td>
+      <td>0.078233</td>
+      <td>0.112501</td>
+      <td>0.000000</td>
+      <td>0.187649</td>
+      <td>0.148153</td>
+      <td>0.160601</td>
+      <td>1.000000</td>
+      <td>0.037872</td>
+      <td>0.105515</td>
+      <td>0.076422</td>
+      <td>0.069224</td>
+      <td>0.058244</td>
+    </tr>
+    <tr>
+      <th>Kalimat 11</th>
+      <td>0.178485</td>
+      <td>0.102600</td>
+      <td>0.066961</td>
+      <td>0.101693</td>
+      <td>0.173579</td>
+      <td>0.000000</td>
+      <td>0.068417</td>
+      <td>0.066964</td>
+      <td>0.058506</td>
+      <td>0.037872</td>
+      <td>1.000000</td>
+      <td>0.162800</td>
+      <td>0.146243</td>
+      <td>0.139209</td>
+      <td>0.101065</td>
+    </tr>
+    <tr>
+      <th>Kalimat 12</th>
+      <td>0.083752</td>
+      <td>0.085805</td>
+      <td>0.050946</td>
+      <td>0.199382</td>
+      <td>0.591212</td>
+      <td>0.000000</td>
+      <td>0.011293</td>
+      <td>0.050948</td>
+      <td>0.000000</td>
+      <td>0.105515</td>
+      <td>0.162800</td>
+      <td>1.000000</td>
+      <td>0.646923</td>
+      <td>0.243801</td>
+      <td>0.038624</td>
+    </tr>
+    <tr>
+      <th>Kalimat 13</th>
+      <td>0.120001</td>
+      <td>0.077078</td>
+      <td>0.045764</td>
+      <td>0.210034</td>
+      <td>0.593846</td>
+      <td>0.000000</td>
+      <td>0.010145</td>
+      <td>0.045766</td>
+      <td>0.000000</td>
+      <td>0.076422</td>
+      <td>0.146243</td>
+      <td>0.646923</td>
+      <td>1.000000</td>
+      <td>0.362603</td>
+      <td>0.063473</td>
+    </tr>
+    <tr>
+      <th>Kalimat 14</th>
+      <td>0.090561</td>
+      <td>0.011903</td>
+      <td>0.009488</td>
+      <td>0.019376</td>
+      <td>0.186886</td>
+      <td>0.000000</td>
+      <td>0.052705</td>
+      <td>0.009489</td>
+      <td>0.000000</td>
+      <td>0.069224</td>
+      <td>0.139209</td>
+      <td>0.243801</td>
+      <td>0.362603</td>
+      <td>1.000000</td>
+      <td>0.108130</td>
+    </tr>
+    <tr>
+      <th>Kalimat 15</th>
+      <td>0.094122</td>
+      <td>0.016153</td>
+      <td>0.059530</td>
+      <td>0.105057</td>
+      <td>0.041181</td>
+      <td>0.000000</td>
+      <td>0.049805</td>
+      <td>0.023704</td>
+      <td>0.000000</td>
+      <td>0.058244</td>
+      <td>0.101065</td>
+      <td>0.038624</td>
+      <td>0.063473</td>
+      <td>0.108130</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-af97465b-4c89-4877-ac08-07d83cac5eff')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-af97465b-4c89-4877-ac08-07d83cac5eff button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-af97465b-4c89-4877-ac08-07d83cac5eff');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Nama kolom dan indeks untuk DataFrame</span>
+<span class="n">sentence_indices</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">))]</span>
+
+<span class="c1"># Buat DataFrame dari hasil cosine similarity</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">)</span>
+
+<span class="c1"># Membuat grafik matriks</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cax</span><span class="p">)</span>
+
+<span class="c1"># Memberi label pada sumbu X dan Y</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan nilai similarity pada matriks</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d710953f0764c0954e923da020c3c314ff25ce0470d3294de743477e19c11dd1.png" src="_images/d710953f0764c0954e923da020c3c314ff25ce0470d3294de743477e19c11dd1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># Buat grafik dari matriks similarity</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># Tambahkan simpul (node) ke grafik yang mewakili setiap kalimat</span>
+<span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan tepi (edge) antara kalimat berdasarkan similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>  <span class="c1"># Mengambil similarity dari DataFrame</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sentences</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">similarity</span><span class="p">)</span>
+
+<span class="c1"># Hitung closeness centrality untuk setiap simpul</span>
+<span class="n">closeness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+<span class="c1"># Cetak closeness centrality</span>
+<span class="k">for</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Closeness Centrality of </span><span class="si">{</span><span class="n">sentence</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">centrality</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Closeness Centrality of 
+
+Jakarta (ANTARA/JACX) – Ketua Umum Partai Gerindra sekaligus bakal calon presiden Prabowo Subianto, secara resmi mengumumkan bahwa putra sulung Presiden Joko Widodo, Gibran Rakabuming Raka, telah dipilih sebagai bakal cawapres dari Partai Gerindra pada Minggu, (22/10/2023).: 18.8843
+Closeness Centrality of Sebuah unggahan video di Facebook berdurasi delapan menit menarasikan bahwa KPU menolak pendaftaran Gibran karena dinyatakan cacat hukum.: 20.9030
+Closeness Centrality of Dalam video tersebut, narator juga menyebutkan pakar hukum tata negara Denny Indrayana menyebut putusan MK tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.: 22.3940
+Closeness Centrality of Berikut narasi dalam unggahan tersebut:
+“NEWS HARI INI ~ DINYATAKAN C4CAT HUKUM KPU TOL4K PENDAFTAN CAWAPRES GIBRAN-- - POLITIK TERBARU”
+
+Namun, benarkah KPU menolak pendaftaran Gibran Rakabuming sebagai bakal cawapres?: 18.1336
+Closeness Centrality of Unggahan video hoaks yang menarasikan KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober.: 12.0832
+Closeness Centrality of Faktanya, belum ada informasi resmi mengenai hal tersebut.: 17.3048
+Closeness Centrality of (Facebook)
+
+Penjelasan:
+
+Berdasarkan penelusuran, dalam video tersebut, narator hanya membacakan narasi dari laman CNN yang berjudul “Denny Indrayana: Putusan MK Tak Bisa Jadi Dasar Gibran Daftar Pilpres”.: 18.6182
+Closeness Centrality of Dalam artikel tersebut, Pakar hukum tata negara Denny Indrayana menyebut putusan Mahkamah Konstitusi (MK) tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.: 23.6341
+Closeness Centrality of Denny beralasan ada konflik kepentingan Ketua MK Anwar Usman dalam putusan itu.: 14.6034
+Closeness Centrality of Download Apps CNN Indonesia sekarangn Anwar dengan Gibran-bakal cawapres yang bisa mendaftar karena putusan baru MK.: 12.7661
+Closeness Centrality of Selain itu, KPU telah menerima berkas pendaftaran Prabowo Subianto dan Gibran Rakabuming Raka sebagai bacapres dan bacawapres, Rabu (25/10), videonya bisa dilihat di laman ANTARA.: 12.4715
+Closeness Centrality of Dengan demikian, klaim KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober merupakan hoaks.: 17.6710
+Closeness Centrality of Klaim: KPU tolak pendaftaran Gibran Rakabuming sebagai bakal cawapres pada 25 Oktober
+Rating: Hoaks
+
+Cek fakta: Hoaks!: 17.5147
+Closeness Centrality of Gibran mengundurkan diri dari PDIP dan bergabung dengan Prabowo pada 14 Oktober
+
+Cek fakta: Hoaks!: 23.2177
+Closeness Centrality of Foto Jokowi temui Anies dan tawarkan Gibran jadi bakal cawapres
+
+Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewarta: Tim JACXEditor: Indriani				COPYRIGHT © ANTARA 2023: 20.3784
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membuat grafik berarah (Directed Graph - DiGraph) yang merepresentasikan hubungan antara kalimat-kalimat dalam teks berdasarkan kemiripan (cosine similarity)</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Buat grafik berarah (DiGraph) berdasarkan similarity_matrix</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Tambahkan node dengan indeks numerik</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>  <span class="c1"># Pastikan node tidak menghubungkan dirinya sendiri</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+<span class="c1"># Hitung closeness centrality</span>
+<span class="n">closeness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi closeness centrality</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># Atur layout grafik</span>
+<span class="n">node_size</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">closeness_centrality</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>  <span class="c1"># Ubah ukuran node berdasarkan closeness centrality, dengan faktor pengurangan ukuran</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">node_size</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Cetak closeness centrality dari yang tertinggi hingga terendah</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Closeness Centrality (Dari Tertinggi ke Terendah):&quot;</span><span class="p">)</span>
+<span class="n">sorted_closeness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">closeness</span> <span class="ow">in</span> <span class="n">sorted_closeness</span><span class="p">:</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>  <span class="c1"># Akses kalimat yang sesuai dengan node</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: Closeness Centrality </span><span class="si">{</span><span class="n">closeness</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat: </span><span class="si">{</span><span class="n">sentence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d8105ce8aa50fe8bc7d3d9d21415e74f0499cf035539b70eb88f30a38f5d0425.png" src="_images/d8105ce8aa50fe8bc7d3d9d21415e74f0499cf035539b70eb88f30a38f5d0425.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Closeness Centrality (Dari Tertinggi ke Terendah):
+Node 0: Closeness Centrality 1.0000
+Kalimat: 
+
+Jakarta (ANTARA/JACX) – Ketua Umum Partai Gerindra sekaligus bakal calon presiden Prabowo Subianto, secara resmi mengumumkan bahwa putra sulung Presiden Joko Widodo, Gibran Rakabuming Raka, telah dipilih sebagai bakal cawapres dari Partai Gerindra pada Minggu, (22/10/2023).
+
+Node 2: Closeness Centrality 1.0000
+Kalimat: Dalam video tersebut, narator juga menyebutkan pakar hukum tata negara Denny Indrayana menyebut putusan MK tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
+
+Node 3: Closeness Centrality 1.0000
+Kalimat: Berikut narasi dalam unggahan tersebut:
+“NEWS HARI INI ~ DINYATAKAN C4CAT HUKUM KPU TOL4K PENDAFTAN CAWAPRES GIBRAN-- - POLITIK TERBARU”
+
+Namun, benarkah KPU menolak pendaftaran Gibran Rakabuming sebagai bakal cawapres?
+
+Node 6: Closeness Centrality 1.0000
+Kalimat: (Facebook)
+
+Penjelasan:
+
+Berdasarkan penelusuran, dalam video tersebut, narator hanya membacakan narasi dari laman CNN yang berjudul “Denny Indrayana: Putusan MK Tak Bisa Jadi Dasar Gibran Daftar Pilpres”.
+
+Node 7: Closeness Centrality 1.0000
+Kalimat: Dalam artikel tersebut, Pakar hukum tata negara Denny Indrayana menyebut putusan Mahkamah Konstitusi (MK) tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
+
+Node 9: Closeness Centrality 0.9333
+Kalimat: Download Apps CNN Indonesia sekarangn Anwar dengan Gibran-bakal cawapres yang bisa mendaftar karena putusan baru MK.
+
+Node 10: Closeness Centrality 0.9333
+Kalimat: Selain itu, KPU telah menerima berkas pendaftaran Prabowo Subianto dan Gibran Rakabuming Raka sebagai bacapres dan bacawapres, Rabu (25/10), videonya bisa dilihat di laman ANTARA.
+
+Node 1: Closeness Centrality 0.8750
+Kalimat: Sebuah unggahan video di Facebook berdurasi delapan menit menarasikan bahwa KPU menolak pendaftaran Gibran karena dinyatakan cacat hukum.
+
+Node 4: Closeness Centrality 0.8750
+Kalimat: Unggahan video hoaks yang menarasikan KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober.
+
+Node 11: Closeness Centrality 0.8750
+Kalimat: Dengan demikian, klaim KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober merupakan hoaks.
+
+Node 12: Closeness Centrality 0.8750
+Kalimat: Klaim: KPU tolak pendaftaran Gibran Rakabuming sebagai bakal cawapres pada 25 Oktober
+Rating: Hoaks
+
+Cek fakta: Hoaks!
+
+Node 13: Closeness Centrality 0.8750
+Kalimat: Gibran mengundurkan diri dari PDIP dan bergabung dengan Prabowo pada 14 Oktober
+
+Cek fakta: Hoaks!
+
+Node 14: Closeness Centrality 0.8750
+Kalimat: Foto Jokowi temui Anies dan tawarkan Gibran jadi bakal cawapres
+
+Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewarta: Tim JACXEditor: Indriani				COPYRIGHT © ANTARA 2023
+
+Node 8: Closeness Centrality 0.7000
+Kalimat: Denny beralasan ada konflik kepentingan Ketua MK Anwar Usman dalam putusan itu.
+
+Node 5: Closeness Centrality 0.6364
+Kalimat: Faktanya, belum ada informasi resmi mengenai hal tersebut.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Buat grafik berarah (DiGraph) berdasarkan similarity_matrix</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Tambahkan node dengan indeks numerik</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>  <span class="c1"># Pastikan node tidak menghubungkan dirinya sendiri</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">similarity</span><span class="p">)</span>  <span class="c1"># Gunakan similarity sebagai weight</span>
+
+<span class="c1"># Hitung PageRank centrality</span>
+<span class="n">pagerank_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi PageRank centrality</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># Atur layout grafik</span>
+<span class="n">node_size</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="mi">10000</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">pagerank_centrality</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>  <span class="c1"># Ubah ukuran node berdasarkan PageRank, dengan faktor pengurangan ukuran</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">node_size</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Cetak PageRank centrality dari yang tertinggi hingga terendah</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PageRank Centrality (Dari Tertinggi ke Terendah):&quot;</span><span class="p">)</span>
+<span class="n">sorted_pagerank</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">pagerank</span> <span class="ow">in</span> <span class="n">sorted_pagerank</span><span class="p">:</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentences</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>  <span class="c1"># Akses kalimat yang sesuai dengan node</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: PageRank Centrality </span><span class="si">{</span><span class="n">pagerank</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat: </span><span class="si">{</span><span class="n">sentence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ceb056d7f538b4d672afbefebd43b915e12f46135327a175b5585cc8e43dd3b6.png" src="_images/ceb056d7f538b4d672afbefebd43b915e12f46135327a175b5585cc8e43dd3b6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PageRank Centrality (Dari Tertinggi ke Terendah):
+Node 4: PageRank Centrality 0.1047
+Kalimat: Unggahan video hoaks yang menarasikan KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober.
+
+Node 12: PageRank Centrality 0.0966
+Kalimat: Klaim: KPU tolak pendaftaran Gibran Rakabuming sebagai bakal cawapres pada 25 Oktober
+Rating: Hoaks
+
+Cek fakta: Hoaks!
+
+Node 11: PageRank Centrality 0.0916
+Kalimat: Dengan demikian, klaim KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober merupakan hoaks.
+
+Node 2: PageRank Centrality 0.0916
+Kalimat: Dalam video tersebut, narator juga menyebutkan pakar hukum tata negara Denny Indrayana menyebut putusan MK tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
+
+Node 7: PageRank Centrality 0.0847
+Kalimat: Dalam artikel tersebut, Pakar hukum tata negara Denny Indrayana menyebut putusan Mahkamah Konstitusi (MK) tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
+
+Node 3: PageRank Centrality 0.0778
+Kalimat: Berikut narasi dalam unggahan tersebut:
+“NEWS HARI INI ~ DINYATAKAN C4CAT HUKUM KPU TOL4K PENDAFTAN CAWAPRES GIBRAN-- - POLITIK TERBARU”
+
+Namun, benarkah KPU menolak pendaftaran Gibran Rakabuming sebagai bakal cawapres?
+
+Node 6: PageRank Centrality 0.0635
+Kalimat: (Facebook)
+
+Penjelasan:
+
+Berdasarkan penelusuran, dalam video tersebut, narator hanya membacakan narasi dari laman CNN yang berjudul “Denny Indrayana: Putusan MK Tak Bisa Jadi Dasar Gibran Daftar Pilpres”.
+
+Node 10: PageRank Centrality 0.0627
+Kalimat: Selain itu, KPU telah menerima berkas pendaftaran Prabowo Subianto dan Gibran Rakabuming Raka sebagai bacapres dan bacawapres, Rabu (25/10), videonya bisa dilihat di laman ANTARA.
+
+Node 9: PageRank Centrality 0.0602
+Kalimat: Download Apps CNN Indonesia sekarangn Anwar dengan Gibran-bakal cawapres yang bisa mendaftar karena putusan baru MK.
+
+Node 13: PageRank Centrality 0.0574
+Kalimat: Gibran mengundurkan diri dari PDIP dan bergabung dengan Prabowo pada 14 Oktober
+
+Cek fakta: Hoaks!
+
+Node 1: PageRank Centrality 0.0542
+Kalimat: Sebuah unggahan video di Facebook berdurasi delapan menit menarasikan bahwa KPU menolak pendaftaran Gibran karena dinyatakan cacat hukum.
+
+Node 0: PageRank Centrality 0.0502
+Kalimat: 
+
+Jakarta (ANTARA/JACX) – Ketua Umum Partai Gerindra sekaligus bakal calon presiden Prabowo Subianto, secara resmi mengumumkan bahwa putra sulung Presiden Joko Widodo, Gibran Rakabuming Raka, telah dipilih sebagai bakal cawapres dari Partai Gerindra pada Minggu, (22/10/2023).
+
+Node 8: PageRank Centrality 0.0448
+Kalimat: Denny beralasan ada konflik kepentingan Ketua MK Anwar Usman dalam putusan itu.
+
+Node 14: PageRank Centrality 0.0384
+Kalimat: Foto Jokowi temui Anies dan tawarkan Gibran jadi bakal cawapres
+
+Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewarta: Tim JACXEditor: Indriani				COPYRIGHT © ANTARA 2023
+
+Node 5: PageRank Centrality 0.0216
+Kalimat: Faktanya, belum ada informasi resmi mengenai hal tersebut.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Hitung betweenness centrality</span>
+<span class="n">betweenness</span><span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Cetak DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame Betweenness Centrality:&quot;</span><span class="p">)</span>
+<span class="n">sorted_betweenness</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">betweenness</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">between</span> <span class="ow">in</span> <span class="n">sorted_betweenness</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">between</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Betweenness Centrality:
+Node 0: 0.0263
+Node 2: 0.0263
+Node 3: 0.0263
+Node 6: 0.0263
+Node 7: 0.0263
+Node 9: 0.0094
+Node 10: 0.0094
+Node 8: 0.0037
+Node 1: 0.0000
+Node 4: 0.0000
+Node 5: 0.0000
+Node 11: 0.0000
+Node 12: 0.0000
+Node 13: 0.0000
+Node 14: 0.0000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cetak betweenness</span>
+<span class="n">top_3_between</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_betweenness</span><span class="o">.</span><span class="n">items</span><span class="p">())[:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Memasukkan 3 kalimat teratas dan informasi node ke dalam DataFrame</span>
+<span class="n">databw</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Node&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_between</span><span class="p">],</span>
+    <span class="s2">&quot;Between&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">between</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">between</span> <span class="ow">in</span> <span class="n">top_3_between</span><span class="p">],</span>
+    <span class="s2">&quot;Kalimat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">sentences</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_between</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df_top_3bw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">databw</span><span class="p">)</span>
+
+<span class="c1"># Cetak DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tiga Node Between Teratas&quot;</span><span class="p">)</span>
+<span class="n">df_top_3bw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiga Node Between Teratas
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-1962d4ea-5f4d-4296-a7aa-1954d726fb8e" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Node</th>
+      <th>Between</th>
+      <th>Kalimat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.026269</td>
+      <td>\n\r\nJakarta (ANTARA/JACX) – Ketua Umum Parta...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0.026269</td>
+      <td>Dalam video tersebut, narator juga menyebutkan...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.026269</td>
+      <td>Berikut narasi dalam unggahan tersebut:\n“NEWS...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1962d4ea-5f4d-4296-a7aa-1954d726fb8e')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-1962d4ea-5f4d-4296-a7aa-1954d726fb8e button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-1962d4ea-5f4d-4296-a7aa-1954d726fb8e');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -968,22 +2631,13 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="notebooks2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Selamat Datang</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">PTA UNIVERSITAS TRUNOJOYO MADURA</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -991,20 +2645,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
