@@ -151,8 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>`);</script>
+    <img src="_static/gambar.png" class="logo__image only-light" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>
+    <script>document.write(`<img src="_static/gambar.png" class="logo__image only-dark" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>`);</script>
   
   
 </a></div>
@@ -464,394 +464,1051 @@ Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewart
 </div>
 </div>
 </div>
+<p>##TF-IDF</p>
+<p>Index dalam bentuk angka</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghitung dan mencetak nilai TF-IDF (Term Frequency-Inverse Document Frequency)</span>
-<span class="c1">#untuk setiap kata dalam setiap kalimat dari teks yang telah di-tokenisasi sebelumnya.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame to store TF-IDF values</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-<span class="c1"># Inisialisasi penghitung TF-IDF</span>
-<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="c1"># Create the TF-IDF vectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
 
-<span class="c1"># Hitung TF-IDF</span>
-<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
-
-<span class="c1"># Daftar kata kunci</span>
-<span class="n">feature_names</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
-
-<span class="c1"># Konversi matriks TF-IDF menjadi bentuk yang lebih mudah dibaca</span>
+<span class="c1"># Extract feature names (words) and TF-IDF values</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
 <span class="n">tfidf_values</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 
-<span class="c1"># Cetak TF-IDF untuk setiap kata dalam setiap kalimat</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">sentence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_names</span><span class="p">):</span>
-        <span class="n">tfidf_value</span> <span class="o">=</span> <span class="n">tfidf_values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">tfidf_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tfidf_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+<span class="c1"># Create a DataFrame from TF-IDF values</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+
+<span class="c1"># Add a new column for sentences</span>
+<span class="n">tfidf_df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentences</span>
+
+<span class="c1"># Reorder columns to have &#39;Kalimat&#39; at the beginning</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">tfidf_df</span><span class="p">[[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">feature_names</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+
+<span class="c1"># Display the resulting DataFrame</span>
+<span class="n">tfidf_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kalimat 1: 
+<div class="output text_html">
+  <div id="df-373e2f1e-c6ed-4f9c-83df-b5f6661dc6bb" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-Jakarta (ANTARA/JACX) – Ketua Umum Partai Gerindra sekaligus bakal calon presiden Prabowo Subianto, secara resmi mengumumkan bahwa putra sulung Presiden Joko Widodo, Gibran Rakabuming Raka, telah dipilih sebagai bakal cawapres dari Partai Gerindra pada Minggu, (22/10/2023).
-10: 0.1435
-2023: 0.1435
-22: 0.1653
-antara: 0.1281
-bahwa: 0.1435
-bakal: 0.2126
-calon: 0.1653
-cawapres: 0.0789
-dari: 0.1281
-dipilih: 0.1653
-gerindra: 0.3305
-gibran: 0.0608
-jacx: 0.1653
-jakarta: 0.1653
-joko: 0.1653
-ketua: 0.1435
-mengumumkan: 0.1653
-minggu: 0.1653
-pada: 0.1063
-partai: 0.3305
-prabowo: 0.1281
-presiden: 0.3305
-putra: 0.1653
-raka: 0.1161
-rakabuming: 0.0845
-resmi: 0.1435
-sebagai: 0.0980
-secara: 0.1653
-sekaligus: 0.1653
-subianto: 0.1435
-sulung: 0.1653
-telah: 0.1435
-umum: 0.1653
-widodo: 0.1653
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-Kalimat 2: Sebuah unggahan video di Facebook berdurasi delapan menit menarasikan bahwa KPU menolak pendaftaran Gibran karena dinyatakan cacat hukum.
-bahwa: 0.2436
-berdurasi: 0.2806
-cacat: 0.2806
-delapan: 0.2806
-di: 0.2436
-dinyatakan: 0.2436
-facebook: 0.2436
-gibran: 0.1033
-hukum: 0.1971
-karena: 0.2436
-kpu: 0.1664
-menarasikan: 0.2436
-menit: 0.2806
-menolak: 0.2436
-pendaftaran: 0.1664
-sebuah: 0.2806
-unggahan: 0.2174
-video: 0.1971
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kalimat</th>
+      <th>10</th>
+      <th>14</th>
+      <th>2023</th>
+      <th>2024</th>
+      <th>22</th>
+      <th>25</th>
+      <th>ada</th>
+      <th>anggotapewarta</th>
+      <th>anies</th>
+      <th>...</th>
+      <th>tol4k</th>
+      <th>tolak</th>
+      <th>tunggu</th>
+      <th>umum</th>
+      <th>unggahan</th>
+      <th>usman</th>
+      <th>video</th>
+      <th>videonya</th>
+      <th>widodo</th>
+      <th>yang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>\n\r\nJakarta (ANTARA/JACX) – Ketua Umum Parta...</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sebuah unggahan video di Facebook berdurasi de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.217406</td>
+      <td>0.000000</td>
+      <td>0.197076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dalam video tersebut, narator juga menyebutkan...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194200</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.157101</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Berikut narasi dalam unggahan tersebut:\n“NEWS...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.228351</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.176952</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Unggahan video hoaks yang menarasikan KPU tola...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Faktanya, belum ada informasi resmi mengenai h...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.330048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>(Facebook)\n\nPenjelasan:\r\n\r\nBerdasarkan p...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.160658</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.177231</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Dalam artikel tersebut, Pakar hukum tata negar...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194207</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Denny beralasan ada konflik kepentingan Ketua ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.293538</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.338048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Download Apps CNN Indonesia sekarangn Anwar de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.232780</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Selain itu, KPU telah menerima berkas pendafta...</td>
+      <td>0.199312</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.161236</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229534</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Dengan demikian, klaim KPU tolak pendaftaran G...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.255991</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.282399</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Klaim: KPU tolak pendaftaran Gibran Rakabuming...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229955</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.253677</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Gibran mengundurkan diri dari PDIP dan bergabu...</td>
+      <td>0.000000</td>
+      <td>0.313111</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Foto Jokowi temui Anies dan tawarkan Gibran ja...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.184482</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.212456</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>15 rows × 160 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-373e2f1e-c6ed-4f9c-83df-b5f6661dc6bb')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
 
-Kalimat 3: Dalam video tersebut, narator juga menyebutkan pakar hukum tata negara Denny Indrayana menyebut putusan MK tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
-2024: 0.1942
-bisa: 0.1439
-capres: 0.1942
-cawapres: 0.1068
-dalam: 0.2877
-denny: 0.1571
-dijadikan: 0.1942
-gibran: 0.0823
-hukum: 0.3142
-indrayana: 0.1733
-juga: 0.1942
-landasan: 0.1942
-mendaftar: 0.1733
-menyebut: 0.1942
-menyebutkan: 0.2236
-mk: 0.1439
-narator: 0.1942
-negara: 0.1942
-pakar: 0.1942
-pilpres: 0.1733
-putusan: 0.1439
-raka: 0.1571
-rakabuming: 0.1144
-syarat: 0.1942
-tata: 0.1942
-tentang: 0.1942
-tersebut: 0.1439
-tidak: 0.1942
-video: 0.1571
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
 
-Kalimat 4: Berikut narasi dalam unggahan tersebut:
-“NEWS HARI INI ~ DINYATAKAN C4CAT HUKUM KPU TOL4K PENDAFTAN CAWAPRES GIBRAN-- - POLITIK TERBARU”
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
 
-Namun, benarkah KPU menolak pendaftaran Gibran Rakabuming sebagai bakal cawapres?
-bakal: 0.1469
-benarkah: 0.2284
-berikut: 0.2284
-c4cat: 0.2284
-cawapres: 0.2180
-dalam: 0.1469
-dinyatakan: 0.1983
-gibran: 0.1681
-hari: 0.2284
-hukum: 0.1604
-ini: 0.2284
-kpu: 0.2709
-menolak: 0.1983
-namun: 0.2284
-narasi: 0.1983
-news: 0.2284
-pendaftan: 0.2284
-pendaftaran: 0.1355
-politik: 0.1983
-rakabuming: 0.1168
-sebagai: 0.1355
-terbaru: 0.2284
-tersebut: 0.1469
-tol4k: 0.2284
-unggahan: 0.1770
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
 
-Kalimat 5: Unggahan video hoaks yang menarasikan KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober.
-25: 0.2729
-cawapres: 0.1855
-gibran: 0.1430
-hoaks: 0.2729
-kpu: 0.2305
-menarasikan: 0.3374
-oktober: 0.2729
-pada: 0.2499
-pendaftaran: 0.2305
-rakabuming: 0.1988
-sebagai: 0.2305
-tolak: 0.3011
-unggahan: 0.3011
-video: 0.2729
-yang: 0.3011
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
 
-Kalimat 6: Faktanya, belum ada informasi resmi mengenai hal tersebut.
-ada: 0.3300
-belum: 0.3801
-faktanya: 0.3801
-hal: 0.3801
-informasi: 0.3801
-mengenai: 0.3801
-resmi: 0.3300
-tersebut: 0.2445
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
 
-Kalimat 7: (Facebook)
+    <script>
+      const buttonEl =
+        document.querySelector('#df-373e2f1e-c6ed-4f9c-83df-b5f6661dc6bb button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
 
-Penjelasan:
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-373e2f1e-c6ed-4f9c-83df-b5f6661dc6bb');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
 
-Berdasarkan penelusuran, dalam video tersebut, narator hanya membacakan narasi dari laman CNN yang berjudul “Denny Indrayana: Putusan MK Tak Bisa Jadi Dasar Gibran Daftar Pilpres”.
-berdasarkan: 0.2287
-berjudul: 0.2287
-bisa: 0.1471
-cnn: 0.1986
-daftar: 0.2287
-dalam: 0.1471
-dari: 0.1772
-dasar: 0.2287
-denny: 0.1607
-facebook: 0.1986
-gibran: 0.0842
-hanya: 0.2287
-indrayana: 0.1772
-jadi: 0.1986
-laman: 0.1986
-membacakan: 0.2287
-mk: 0.1471
-narasi: 0.1986
-narator: 0.1986
-penelusuran: 0.2287
-penjelasan: 0.2287
-pilpres: 0.1772
-putusan: 0.1471
-tak: 0.2287
-tersebut: 0.1471
-video: 0.1607
-yang: 0.1772
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<p>Index dalam bentuk kalimat 1,2 dst</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame to store TF-IDF values</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-Kalimat 8: Dalam artikel tersebut, Pakar hukum tata negara Denny Indrayana menyebut putusan Mahkamah Konstitusi (MK) tentang syarat capres-cawapres tidak bisa dijadikan landasan hukum Gibran Rakabuming Raka dalam mendaftar Pilpres 2024.
-2024: 0.1942
-artikel: 0.2237
-bisa: 0.1439
-capres: 0.1942
-cawapres: 0.1068
-dalam: 0.2877
-denny: 0.1571
-dijadikan: 0.1942
-gibran: 0.0823
-hukum: 0.3142
-indrayana: 0.1733
-konstitusi: 0.2237
-landasan: 0.1942
-mahkamah: 0.2237
-mendaftar: 0.1733
-menyebut: 0.1942
-mk: 0.1439
-negara: 0.1942
-pakar: 0.1942
-pilpres: 0.1733
-putusan: 0.1439
-raka: 0.1571
-rakabuming: 0.1144
-syarat: 0.1942
-tata: 0.1942
-tentang: 0.1942
-tersebut: 0.1439
-tidak: 0.1942
+<span class="c1"># Create the TF-IDF vectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
 
-Kalimat 9: Denny beralasan ada konflik kepentingan Ketua MK Anwar Usman dalam putusan itu.
-ada: 0.2935
-anwar: 0.2935
-beralasan: 0.3380
-dalam: 0.2174
-denny: 0.2375
-itu: 0.2935
-kepentingan: 0.3380
-ketua: 0.2935
-konflik: 0.3380
-mk: 0.2174
-putusan: 0.2174
-usman: 0.3380
+<span class="c1"># Extract feature names (words) and TF-IDF values</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+<span class="n">tfidf_values</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 
-Kalimat 10: Download Apps CNN Indonesia sekarangn Anwar dengan Gibran-bakal cawapres yang bisa mendaftar karena putusan baru MK.
-anwar: 0.2608
-apps: 0.3004
-bakal: 0.1932
-baru: 0.3004
-bisa: 0.1932
-cawapres: 0.1434
-cnn: 0.2608
-dengan: 0.2328
-download: 0.3004
-gibran: 0.1106
-indonesia: 0.3004
-karena: 0.2608
-mendaftar: 0.2328
-mk: 0.1932
-putusan: 0.1932
-sekarangn: 0.3004
-yang: 0.2328
+<span class="c1"># Create a DataFrame from TF-IDF values</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
 
-Kalimat 11: Selain itu, KPU telah menerima berkas pendaftaran Prabowo Subianto dan Gibran Rakabuming Raka sebagai bacapres dan bacawapres, Rabu (25/10), videonya bisa dilihat di laman ANTARA.
-10: 0.1993
-25: 0.1612
-antara: 0.1779
-bacapres: 0.2295
-bacawapres: 0.2295
-berkas: 0.2295
-bisa: 0.1476
-dan: 0.3557
-di: 0.1993
-dilihat: 0.2295
-gibran: 0.0845
-itu: 0.1993
-kpu: 0.1362
-laman: 0.1993
-menerima: 0.2295
-pendaftaran: 0.1362
-prabowo: 0.1779
-rabu: 0.2295
-raka: 0.1612
-rakabuming: 0.1174
-sebagai: 0.1362
-selain: 0.2295
-subianto: 0.1993
-telah: 0.1993
-videonya: 0.2295
+<span class="c1"># Add a new column for sentences</span>
+<span class="n">tfidf_df</span><span class="p">[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentences</span>
 
-Kalimat 12: Dengan demikian, klaim KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober merupakan hoaks.
-25: 0.2560
-cawapres: 0.1740
-demikian: 0.3644
-dengan: 0.2824
-gibran: 0.1341
-hoaks: 0.2560
-klaim: 0.3164
-kpu: 0.2162
-merupakan: 0.3644
-oktober: 0.2560
-pada: 0.2344
-pendaftaran: 0.2162
-rakabuming: 0.1864
-sebagai: 0.2162
-tolak: 0.2824
+<span class="c1"># Reorder columns to have &#39;Kalimat&#39; at the beginning</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">tfidf_df</span><span class="p">[[</span><span class="s1">&#39;Kalimat&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">feature_names</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 
-Kalimat 13: Klaim: KPU tolak pendaftaran Gibran Rakabuming sebagai bakal cawapres pada 25 Oktober
-Rating: Hoaks
+<span class="c1"># Change the index to represent &quot;Kalimat 1,&quot; &quot;Kalimat 2,&quot; etc.</span>
+<span class="n">tfidf_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tfidf_df</span><span class="p">))]</span>
 
-Cek fakta: Hoaks!
-25: 0.2300
-bakal: 0.2106
-cawapres: 0.1563
-cek: 0.2843
-fakta: 0.2843
-gibran: 0.1205
-hoaks: 0.4599
-klaim: 0.2843
-kpu: 0.1942
-oktober: 0.2300
-pada: 0.2106
-pendaftaran: 0.1942
-rakabuming: 0.1675
-rating: 0.3274
-sebagai: 0.1942
-tolak: 0.2537
-
-Kalimat 14: Gibran mengundurkan diri dari PDIP dan bergabung dengan Prabowo pada 14 Oktober
-
-Cek fakta: Hoaks!
-14: 0.3131
-bergabung: 0.3131
-cek: 0.2719
-dan: 0.2426
-dari: 0.2426
-dengan: 0.2426
-diri: 0.3131
-fakta: 0.2719
-gibran: 0.1153
-hoaks: 0.2199
-mengundurkan: 0.3131
-oktober: 0.2199
-pada: 0.2014
-pdip: 0.2719
-prabowo: 0.2426
-
-Kalimat 15: Foto Jokowi temui Anies dan tawarkan Gibran jadi bakal cawapres
-
-Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewarta: Tim JACXEditor: Indriani				COPYRIGHT © ANTARA 2023
-2023: 0.1845
-anggotapewarta: 0.2125
-anies: 0.2125
-antara: 0.1646
-baca: 0.2125
-bakal: 0.1367
-cawapres: 0.1014
-copyright: 0.2125
-dan: 0.1646
-etika: 0.2125
-foto: 0.2125
-gibran: 0.1564
-indriani: 0.2125
-jacxeditor: 0.2125
-jadi: 0.1845
-jokowi: 0.2125
-juga: 0.1845
-kartu: 0.2125
-kembalikan: 0.2125
-pdip: 0.1845
-politik: 0.1845
-tanda: 0.2125
-tawarkan: 0.2125
-temui: 0.2125
-tim: 0.2125
-tunggu: 0.2125
+<span class="c1"># Display the resulting DataFrame</span>
+<span class="n">tfidf_df</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-05feb818-a1b6-43aa-bf3c-c57cb3694eb6" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kalimat</th>
+      <th>10</th>
+      <th>14</th>
+      <th>2023</th>
+      <th>2024</th>
+      <th>22</th>
+      <th>25</th>
+      <th>ada</th>
+      <th>anggotapewarta</th>
+      <th>anies</th>
+      <th>...</th>
+      <th>tol4k</th>
+      <th>tolak</th>
+      <th>tunggu</th>
+      <th>umum</th>
+      <th>unggahan</th>
+      <th>usman</th>
+      <th>video</th>
+      <th>videonya</th>
+      <th>widodo</th>
+      <th>yang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Kalimat 1</th>
+      <td>\n\r\nJakarta (ANTARA/JACX) – Ketua Umum Parta...</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.143494</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.165253</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 2</th>
+      <td>Sebuah unggahan video di Facebook berdurasi de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.217406</td>
+      <td>0.000000</td>
+      <td>0.197076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 3</th>
+      <td>Dalam video tersebut, narator juga menyebutkan...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194200</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.157101</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 4</th>
+      <td>Berikut narasi dalam unggahan tersebut:\n“NEWS...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.228351</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.176952</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 5</th>
+      <td>Unggahan video hoaks yang menarasikan KPU tola...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+      <td>0.000000</td>
+      <td>0.272939</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.301095</td>
+    </tr>
+    <tr>
+      <th>Kalimat 6</th>
+      <td>Faktanya, belum ada informasi resmi mengenai h...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.330048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 7</th>
+      <td>(Facebook)\n\nPenjelasan:\r\n\r\nBerdasarkan p...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.160658</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.177231</td>
+    </tr>
+    <tr>
+      <th>Kalimat 8</th>
+      <td>Dalam artikel tersebut, Pakar hukum tata negar...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.194207</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 9</th>
+      <td>Denny beralasan ada konflik kepentingan Ketua ...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.293538</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.338048</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 10</th>
+      <td>Download Apps CNN Indonesia sekarangn Anwar de...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.232780</td>
+    </tr>
+    <tr>
+      <th>Kalimat 11</th>
+      <td>Selain itu, KPU telah menerima berkas pendafta...</td>
+      <td>0.199312</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.161236</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229534</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 12</th>
+      <td>Dengan demikian, klaim KPU tolak pendaftaran G...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.255991</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.282399</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 13</th>
+      <td>Klaim: KPU tolak pendaftaran Gibran Rakabuming...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.229955</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.253677</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 14</th>
+      <td>Gibran mengundurkan diri dari PDIP dan bergabu...</td>
+      <td>0.000000</td>
+      <td>0.313111</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 15</th>
+      <td>Foto Jokowi temui Anies dan tawarkan Gibran ja...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.184482</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.212456</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.212456</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>15 rows × 160 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-05feb818-a1b6-43aa-bf3c-c57cb3694eb6')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-05feb818-a1b6-43aa-bf3c-c57cb3694eb6 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-05feb818-a1b6-43aa-bf3c-c57cb3694eb6');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1027,7 +1684,7 @@ Cosine Similarity antara Kalimat 14 dan Kalimat 15: 0.1081
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-11420eed-ed58-4764-b264-805697fc7525" class="colab-df-container">
+  <div id="df-8621b245-54d9-4cc7-a16e-a074ff62b4d2" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1340,7 +1997,7 @@ Cosine Similarity antara Kalimat 14 dan Kalimat 15: 0.1081
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-11420eed-ed58-4764-b264-805697fc7525')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8621b245-54d9-4cc7-a16e-a074ff62b4d2')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1392,12 +2049,12 @@ Cosine Similarity antara Kalimat 14 dan Kalimat 15: 0.1081
 
     <script>
       const buttonEl =
-        document.querySelector('#df-11420eed-ed58-4764-b264-805697fc7525 button.colab-df-convert');
+        document.querySelector('#df-8621b245-54d9-4cc7-a16e-a074ff62b4d2 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-11420eed-ed58-4764-b264-805697fc7525');
+        const element = document.querySelector('#df-8621b245-54d9-4cc7-a16e-a074ff62b4d2');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1570,7 +2227,7 @@ Baca juga: PDIP tunggu etika politik Gibran kembalikan Kartu Tanda AnggotaPewart
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c9e273e66206de79362e0560e52ea96d99dee6760afd58e4b6ab19c7e511aa4d.png" src="_images/c9e273e66206de79362e0560e52ea96d99dee6760afd58e4b6ab19c7e511aa4d.png" />
+<img alt="_images/9a090da91941efdad373aa7243c23926817e10fe14dac656399e859f4cfb2680.png" src="_images/9a090da91941efdad373aa7243c23926817e10fe14dac656399e859f4cfb2680.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Closeness Centrality (Dari Tertinggi ke Terendah):
 Node 0: Closeness Centrality 1.0000
 Kalimat: 
@@ -1685,7 +2342,7 @@ Kalimat: Faktanya, belum ada informasi resmi mengenai hal tersebut.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7ff547dc3d9e6e8eb9603766ee0033050df13474fc6a2ccc78f175d94781c5b.png" src="_images/f7ff547dc3d9e6e8eb9603766ee0033050df13474fc6a2ccc78f175d94781c5b.png" />
+<img alt="_images/40ff064b560104439c40cca21f075c08b1d64512b6928ae5720ce74c88027554.png" src="_images/40ff064b560104439c40cca21f075c08b1d64512b6928ae5720ce74c88027554.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PageRank Centrality (Dari Tertinggi ke Terendah):
 Node 4: PageRank Centrality 0.1047
 Kalimat: Unggahan video hoaks yang menarasikan KPU tolak pendaftaran Gibran Rakabuming sebagai Cawapres pada 25 Oktober.
@@ -1812,7 +2469,7 @@ Node 14: 0.0000
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-be136bf0-53a4-44c2-882c-9a0ebda44517" class="colab-df-container">
+  <div id="df-6a48ef4e-9035-42a5-b193-62e077256091" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1861,7 +2518,7 @@ Node 14: 0.0000
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-be136bf0-53a4-44c2-882c-9a0ebda44517')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6a48ef4e-9035-42a5-b193-62e077256091')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1913,12 +2570,12 @@ Node 14: 0.0000
 
     <script>
       const buttonEl =
-        document.querySelector('#df-be136bf0-53a4-44c2-882c-9a0ebda44517 button.colab-df-convert');
+        document.querySelector('#df-6a48ef4e-9035-42a5-b193-62e077256091 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-be136bf0-53a4-44c2-882c-9a0ebda44517');
+        const element = document.querySelector('#df-6a48ef4e-9035-42a5-b193-62e077256091');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});

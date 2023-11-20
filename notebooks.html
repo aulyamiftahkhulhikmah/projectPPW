@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tugas Berita" href="notebooks2.html" />
-    <link rel="prev" title="Selamat Datang" href="intro.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="notebooks3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>`);</script>
+    <img src="_static/gambar.png" class="logo__image only-light" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>
+    <script>document.write(`<img src="_static/gambar.png" class="logo__image only-dark" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>`);</script>
   
   
 </a></div>
@@ -418,7 +418,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-bb9454bc-cf9d-4e3e-b9ff-bed99f7f309f" class="colab-df-container">
+  <div id="df-7958f1cd-76e0-4316-9cf3-edadc928f59d" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -564,7 +564,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-bb9454bc-cf9d-4e3e-b9ff-bed99f7f309f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7958f1cd-76e0-4316-9cf3-edadc928f59d')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -616,12 +616,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-bb9454bc-cf9d-4e3e-b9ff-bed99f7f309f button.colab-df-convert');
+        document.querySelector('#df-7958f1cd-76e0-4316-9cf3-edadc928f59d button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-bb9454bc-cf9d-4e3e-b9ff-bed99f7f309f');
+        const element = document.querySelector('#df-7958f1cd-76e0-4316-9cf3-edadc928f59d');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -644,7 +644,7 @@ document.write(`
   </div>
   </div></div>
 </div>
-<p>Pre-Processing</p>
+<p>##Pre-Processing</p>
 <p>Cek Data Kosong</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,7 +720,7 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-90bd4ee5-1193-4197-ac2a-61847560c87f" class="colab-df-container">
+  <div id="df-64d07f87-44dc-4822-ad5a-fc7597fac73b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -805,7 +805,7 @@ dtype: int64
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-90bd4ee5-1193-4197-ac2a-61847560c87f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-64d07f87-44dc-4822-ad5a-fc7597fac73b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -857,12 +857,12 @@ dtype: int64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-90bd4ee5-1193-4197-ac2a-61847560c87f button.colab-df-convert');
+        document.querySelector('#df-64d07f87-44dc-4822-ad5a-fc7597fac73b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-90bd4ee5-1193-4197-ac2a-61847560c87f');
+        const element = document.querySelector('#df-64d07f87-44dc-4822-ad5a-fc7597fac73b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -885,7 +885,7 @@ dtype: int64
   </div>
   </div></div>
 </div>
-<p>Tokenize Data</p>
+<p>##Tokenize Data</p>
 <blockquote>
 <div><p>Memisahkan sebuah dokumen menjadi susunan perkata/term</p>
 </div></blockquote>
@@ -902,30 +902,24 @@ dtype: int64
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading collection &#39;popular&#39;
 [nltk_data]    | 
 [nltk_data]    | Downloading package cmudict to /root/nltk_data...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/cmudict.zip.
+[nltk_data]    |   Unzipping corpora/cmudict.zip.
 [nltk_data]    | Downloading package gazetteers to /root/nltk_data...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/gazetteers.zip.
 [nltk_data]    | Downloading package genesis to /root/nltk_data...
 [nltk_data]    |   Unzipping corpora/genesis.zip.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package gutenberg to /root/nltk_data...
+[nltk_data]    | Downloading package gutenberg to /root/nltk_data...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/gutenberg.zip.
 [nltk_data]    | Downloading package inaugural to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/inaugural.zip.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/inaugural.zip.
-[nltk_data]    | Downloading package movie_reviews to
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package movie_reviews to
 [nltk_data]    |     /root/nltk_data...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/movie_reviews.zip.
+[nltk_data]    |   Unzipping corpora/movie_reviews.zip.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package names to /root/nltk_data...
@@ -948,9 +942,7 @@ dtype: int64
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package omw to /root/nltk_data...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package omw-1.4 to /root/nltk_data...
+[nltk_data]    | Downloading package omw-1.4 to /root/nltk_data...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package wordnet to /root/nltk_data...
@@ -967,9 +959,7 @@ dtype: int64
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package words to /root/nltk_data...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/words.zip.
+[nltk_data]    |   Unzipping corpora/words.zip.
 [nltk_data]    | Downloading package maxent_ne_chunker to
 [nltk_data]    |     /root/nltk_data...
 </pre></div>
@@ -1007,7 +997,7 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a6f2a17b-69e8-43af-a92c-9ef5e6817136" class="colab-df-container">
+  <div id="df-eb777a95-2da3-46fc-9d3c-572519213fef" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1062,7 +1052,7 @@ dtype: int64
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-a6f2a17b-69e8-43af-a92c-9ef5e6817136')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-eb777a95-2da3-46fc-9d3c-572519213fef')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1114,12 +1104,12 @@ dtype: int64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-a6f2a17b-69e8-43af-a92c-9ef5e6817136 button.colab-df-convert');
+        document.querySelector('#df-eb777a95-2da3-46fc-9d3c-572519213fef button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-a6f2a17b-69e8-43af-a92c-9ef5e6817136');
+        const element = document.querySelector('#df-eb777a95-2da3-46fc-9d3c-572519213fef');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1142,7 +1132,7 @@ dtype: int64
   </div>
   </div></div>
 </div>
-<p>Stop Word</p>
+<p>##Stop Word</p>
 <blockquote>
 <div><p>Mengubah isi dari dokumen sesuai dengan corpus</p>
 </div></blockquote>
@@ -1190,7 +1180,7 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-bdbbadc8-9464-4128-acb0-0cd6aef5fadc" class="colab-df-container">
+  <div id="df-5d550dcf-aea7-4f08-bed4-d85b03d5660f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1245,7 +1235,7 @@ dtype: int64
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-bdbbadc8-9464-4128-acb0-0cd6aef5fadc')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5d550dcf-aea7-4f08-bed4-d85b03d5660f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1297,12 +1287,12 @@ dtype: int64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-bdbbadc8-9464-4128-acb0-0cd6aef5fadc button.colab-df-convert');
+        document.querySelector('#df-5d550dcf-aea7-4f08-bed4-d85b03d5660f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-bdbbadc8-9464-4128-acb0-0cd6aef5fadc');
+        const element = document.querySelector('#df-5d550dcf-aea7-4f08-bed4-d85b03d5660f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1340,8 +1330,10 @@ dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sastrawi
   Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">204.8/209.7 kB</span> <span class=" -Color -Color-Red">6.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">5.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">41.0/209.7 kB</span> <span class=" -Color -Color-Red">1.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">3.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -1393,7 +1385,7 @@ Successfully installed sastrawi-1.0.1
 </div>
 </div>
 <p>Ekstraksi Fitur</p>
-<p>Term Frequency</p>
+<p>##Term Frequency</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
@@ -1456,7 +1448,7 @@ Length: 8588, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a2380578-d0d7-41f9-8c03-1322591c64b2" class="colab-df-container">
+  <div id="df-934ecebb-f03e-4043-9909-a41fef0abc49" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1770,7 +1762,7 @@ Length: 8588, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-a2380578-d0d7-41f9-8c03-1322591c64b2')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-934ecebb-f03e-4043-9909-a41fef0abc49')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1822,12 +1814,12 @@ Length: 8588, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-a2380578-d0d7-41f9-8c03-1322591c64b2 button.colab-df-convert');
+        document.querySelector('#df-934ecebb-f03e-4043-9909-a41fef0abc49 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-a2380578-d0d7-41f9-8c03-1322591c64b2');
+        const element = document.querySelector('#df-934ecebb-f03e-4043-9909-a41fef0abc49');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1857,7 +1849,7 @@ Length: 8588, dtype: object
 </div>
 </div>
 </div>
-<p>TF-IDF</p>
+<p>##TF-IDF</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
@@ -1872,7 +1864,7 @@ Length: 8588, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c482d938-4096-479e-a6f4-dca6c9496248" class="colab-df-container">
+  <div id="df-2e1cccbc-95ab-402a-a59b-29ff7bd8613f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2186,7 +2178,7 @@ Length: 8588, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c482d938-4096-479e-a6f4-dca6c9496248')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2e1cccbc-95ab-402a-a59b-29ff7bd8613f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2238,12 +2230,12 @@ Length: 8588, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c482d938-4096-479e-a6f4-dca6c9496248 button.colab-df-convert');
+        document.querySelector('#df-2e1cccbc-95ab-402a-a59b-29ff7bd8613f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c482d938-4096-479e-a6f4-dca6c9496248');
+        const element = document.querySelector('#df-2e1cccbc-95ab-402a-a59b-29ff7bd8613f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2285,7 +2277,7 @@ Length: 8588, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b0e55a1c-5a27-45df-b8e2-a8e706365114" class="colab-df-container">
+  <div id="df-dc6fe4c7-14df-4ddb-b5d4-987f8830d547" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2599,7 +2591,7 @@ Length: 8588, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b0e55a1c-5a27-45df-b8e2-a8e706365114')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-dc6fe4c7-14df-4ddb-b5d4-987f8830d547')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2651,12 +2643,12 @@ Length: 8588, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b0e55a1c-5a27-45df-b8e2-a8e706365114 button.colab-df-convert');
+        document.querySelector('#df-dc6fe4c7-14df-4ddb-b5d4-987f8830d547 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b0e55a1c-5a27-45df-b8e2-a8e706365114');
+        const element = document.querySelector('#df-dc6fe4c7-14df-4ddb-b5d4-987f8830d547');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2708,7 +2700,7 @@ Length: 816, dtype: float64
 </div>
 </div>
 </div>
-<p>Log Frequency</p>
+<p>##Log Frequency</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df_countvect</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
@@ -2720,7 +2712,7 @@ Length: 816, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ab7d4461-bc06-4c77-8b02-4244295667ad" class="colab-df-container">
+  <div id="df-5c1873f7-013c-4af0-8716-523c01395dd4" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3034,7 +3026,7 @@ Length: 816, dtype: float64
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ab7d4461-bc06-4c77-8b02-4244295667ad')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5c1873f7-013c-4af0-8716-523c01395dd4')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3086,12 +3078,12 @@ Length: 816, dtype: float64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ab7d4461-bc06-4c77-8b02-4244295667ad button.colab-df-convert');
+        document.querySelector('#df-5c1873f7-013c-4af0-8716-523c01395dd4 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ab7d4461-bc06-4c77-8b02-4244295667ad');
+        const element = document.querySelector('#df-5c1873f7-013c-4af0-8716-523c01395dd4');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3144,16 +3136,16 @@ Length: 816, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kata yang mirip dengan &#39;machine&#39;:
-alat: 0.4209
-pengenalan: 0.4146
-pengetahuan: 0.4030
-kondisi: 0.3991
-sumenep: 0.3886
-dinilai: 0.3865
-reality: 0.3865
-e: 0.3857
-bayes: 0.3853
-server: 0.3847
+alat: 0.3882
+pengetahuan: 0.3709
+jasa: 0.3673
+dinilai: 0.3608
+pengenalan: 0.3606
+sumenep: 0.3535
+server: 0.3529
+kondisi: 0.3527
+didefinisikan: 0.3501
+reality: 0.3448
 </pre></div>
 </div>
 </div>
@@ -3186,7 +3178,7 @@ server: 0.3847
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kata-kata dalam konteks window=1 untuk &#39;machine&#39;:
 machine
 alat
-pengenalan
+jasa
 </pre></div>
 </div>
 </div>
@@ -3213,12 +3205,12 @@ pengenalan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kesamaan kosakata antara &#39;gerak&#39; dan &#39;sistem&#39;: 0.3400
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kesamaan kosakata antara &#39;gerak&#39; dan &#39;sistem&#39;: 0.3079
 </pre></div>
 </div>
 </div>
 </div>
-<p>LDA Modelling</p>
+<p>##LDA Modelling</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">LatentDirichletAllocation</span><span class="p">,</span> <span class="n">TruncatedSVD</span>
@@ -3255,7 +3247,7 @@ pengenalan
 </div>
 </div>
 </div>
-<p>Proporsi Topik Pada Dokumen</p>
+<p>##Proporsi Topik Pada Dokumen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_word</span> <span class="o">=</span> <span class="mi">100</span>
@@ -3278,7 +3270,7 @@ pengenalan
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-310cb2aa-90e3-4715-82a8-af189ac46c40" class="colab-df-container">
+  <div id="df-1bfc5ffc-4b35-4401-882a-4b570a57f362" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3436,7 +3428,7 @@ pengenalan
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-310cb2aa-90e3-4715-82a8-af189ac46c40')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1bfc5ffc-4b35-4401-882a-4b570a57f362')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3488,12 +3480,12 @@ pengenalan
 
     <script>
       const buttonEl =
-        document.querySelector('#df-310cb2aa-90e3-4715-82a8-af189ac46c40 button.colab-df-convert');
+        document.querySelector('#df-1bfc5ffc-4b35-4401-882a-4b570a57f362 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-310cb2aa-90e3-4715-82a8-af189ac46c40');
+        const element = document.querySelector('#df-1bfc5ffc-4b35-4401-882a-4b570a57f362');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3534,7 +3526,7 @@ pengenalan
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2a51fc99-0484-44ad-a7aa-4a31ebc5d4fe" class="colab-df-container">
+  <div id="df-fc7bb57d-a2af-46c9-ba18-025a47d0c83f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3644,7 +3636,7 @@ pengenalan
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-2a51fc99-0484-44ad-a7aa-4a31ebc5d4fe')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-fc7bb57d-a2af-46c9-ba18-025a47d0c83f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3696,12 +3688,12 @@ pengenalan
 
     <script>
       const buttonEl =
-        document.querySelector('#df-2a51fc99-0484-44ad-a7aa-4a31ebc5d4fe button.colab-df-convert');
+        document.querySelector('#df-fc7bb57d-a2af-46c9-ba18-025a47d0c83f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-2a51fc99-0484-44ad-a7aa-4a31ebc5d4fe');
+        const element = document.querySelector('#df-fc7bb57d-a2af-46c9-ba18-025a47d0c83f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -5187,11 +5179,11 @@ Topik 2: 0.0138
 Topik 3: 0.3410
 
 Dokumen 286:
-Topik 1: 0.0189
-Topik 2: 0.0189
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topik 3: 0.9622
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topik 1: 0.0189
+Topik 2: 0.0189
+Topik 3: 0.9622
 
 Dokumen 287:
 Topik 1: 0.9605
@@ -6392,9 +6384,8 @@ Dokumen 526:
 Topik 1: 0.9616
 Topik 2: 0.0192
 Topik 3: 0.0192
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dokumen 527:
+
+Dokumen 527:
 Topik 1: 0.2044
 Topik 2: 0.5029
 Topik 3: 0.2927
@@ -6831,7 +6822,9 @@ Topik 3: 0.9696
 
 Dokumen 614:
 Topik 1: 0.0142
-Topik 2: 0.6719
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topik 2: 0.6719
 Topik 3: 0.3139
 
 Dokumen 615:
@@ -7623,9 +7616,8 @@ Dokumen 772:
 Topik 1: 0.0186
 Topik 2: 0.6737
 Topik 3: 0.3077
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dokumen 773:
+
+Dokumen 773:
 Topik 1: 0.0177
 Topik 2: 0.0177
 Topik 3: 0.9645
@@ -7900,7 +7892,7 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
 </div>
 </div>
 </div>
-<p>Proporsi Topik Pada Kata</p>
+<p>##Proporsi Topik Pada Kata</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_word_propotion</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">components_</span> <span class="o">/</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">components_</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
@@ -7914,7 +7906,7 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3d750607-829a-41bb-9290-7f76436c1c5e" class="colab-df-container">
+  <div id="df-8d616b9c-10ed-468e-b4a8-4205208cd066" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -8024,7 +8016,7 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-3d750607-829a-41bb-9290-7f76436c1c5e')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8d616b9c-10ed-468e-b4a8-4205208cd066')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -8076,12 +8068,12 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
 
     <script>
       const buttonEl =
-        document.querySelector('#df-3d750607-829a-41bb-9290-7f76436c1c5e button.colab-df-convert');
+        document.querySelector('#df-8d616b9c-10ed-468e-b4a8-4205208cd066 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-3d750607-829a-41bb-9290-7f76436c1c5e');
+        const element = document.querySelector('#df-8d616b9c-10ed-468e-b4a8-4205208cd066');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -8105,7 +8097,7 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
   </div></div>
 </div>
 <p>Akurasi Dengan naive bayes</p>
-<p>Naive Bayes</p>
+<p>##Naive Bayes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -8198,12 +8190,12 @@ weighted avg       0.69      0.67      0.65       165
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="notebooks3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Selamat Datang</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"
