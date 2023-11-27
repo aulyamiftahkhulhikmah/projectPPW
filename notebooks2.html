@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas Berita" href="notebooks3.html" />
+    <link rel="next" title="&lt;no title&gt;" href="notebooks3.html" />
     <link rel="prev" title="Crawling PTA Trunojoyo" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -139,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -152,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/gambar.png" class="logo__image only-light" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>
-    <script>document.write(`<img src="_static/gambar.png" class="logo__image only-dark" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>`);</script>
+    <img src="_static/profil.jpg" class="logo__image only-light" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>
+    <script>document.write(`<img src="_static/profil.jpg" class="logo__image only-dark" alt="Aulya Miftahkhul Hikmah/200411100050 - Home"/>`);</script>
   
   
 </a></div>
@@ -171,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Crawling PTA Trunojoyo</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">PTA UNIVERSITAS TRUNOJOYO MADURA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks3.html">Tugas Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks4.html">Perhitungan Manual PageRank</a></li>
 </ul>
 
     </div>
@@ -356,6 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -365,6 +367,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -396,11 +399,35 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word">Stop Word</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency">Term Frequency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">One Hot Encoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-frequency">Log Frequency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-modelling">LDA Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-import-library">Install &amp; Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-data">Import Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-data">Cleaning Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-data-kosong">Cek Data Kosong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hapus-data-kosong">Hapus Data Kosong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding">Case Folding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-fungsi-pada-abstrak">Implementasi Fungsi Pada Abstrak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize-data">Tokenize Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-libary">Implementasi Libary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word">Stop Word</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libary-nltk-stopwords">Import Libary NLTK Stopwords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libary-sastrawi">Import Libary Sastrawi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency">Term Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">One Hot Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bobot-kata-dalam-setiap-dokumen">Bobot Kata Dalam Setiap Dokumen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-frequency">Log Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skip-gram">Skip Gram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-modelling">LDA Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-data">Modelling Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proporsi-topik-pada-dokumen">Proporsi Topik Pada Dokumen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proporsi-kata-pada-topik">Proporsi kata pada topik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-dengan-naive-bayes">Modelling dengan Naive Bayes</a></li>
 </ul>
             </nav>
         </div>
@@ -414,7 +441,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pta-universitas-trunojoyo-madura">
 <h1>PTA UNIVERSITAS TRUNOJOYO MADURA<a class="headerlink" href="#pta-universitas-trunojoyo-madura" title="Permalink to this heading">#</a></h1>
+<section id="preprocessing">
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h2>
 <p>Preprocessing data teks adalah tahapan penting dalam analisis teks dan pemrosesan bahasa alami (Natural Language Processing/NLP). Tujuannya adalah untuk membersihkan, mentransformasi, dan mengorganisasi data teks sehingga menjadi lebih sesuai untuk analisis atau penggunaan di berbagai model pembelajaran mesin. Berikut ini adalah beberapa tahapan umum dalam preprocessing data teks:</p>
+</section>
+<section id="install-import-library">
+<h2>Install &amp; Import Library<a class="headerlink" href="#install-import-library" title="Permalink to this heading">#</a></h2>
+<p>Hal pertama yang dilakukan adalh mempersiapkan library yang dibutuhkan</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -423,7 +456,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Import Data</p>
+</section>
+<section id="import-data">
+<h2>Import Data<a class="headerlink" href="#import-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/aulyamiftahkhulhikmah/Dataset/main/pta-infor.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
@@ -434,7 +469,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8095e481-d31f-4358-a21c-945b6afbc85b" class="colab-df-container">
+  <div id="df-976a8052-7a6f-4faa-926a-04a48e40f615" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -580,7 +615,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8095e481-d31f-4358-a21c-945b6afbc85b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-976a8052-7a6f-4faa-926a-04a48e40f615')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -632,12 +667,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-8095e481-d31f-4358-a21c-945b6afbc85b button.colab-df-convert');
+        document.querySelector('#df-976a8052-7a6f-4faa-926a-04a48e40f615 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8095e481-d31f-4358-a21c-945b6afbc85b');
+        const element = document.querySelector('#df-976a8052-7a6f-4faa-926a-04a48e40f615');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -660,9 +695,12 @@ document.write(`
   </div>
   </div></div>
 </div>
-<p>##Pre-Processing
-Tujuannya adalah untuk membersihkan, mentransformasi, dan mengorganisasi data teks sehingga menjadi lebih sesuai untuk analisis atau penggunaan di berbagai model pembelajaran mesin.</p>
-<p>Cek Data Kosong</p>
+</section>
+<section id="cleaning-data">
+<h2>Cleaning Data<a class="headerlink" href="#cleaning-data" title="Permalink to this heading">#</a></h2>
+<p>Tujuannya adalah untuk membersihkan, mentransformasi, dan mengorganisasi data teks sehingga menjadi lebih sesuai untuk analisis atau penggunaan di berbagai model pembelajaran mesin.</p>
+<section id="cek-data-kosong">
+<h3>Cek Data Kosong<a class="headerlink" href="#cek-data-kosong" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -682,7 +720,9 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Hapus Data Kosong</p>
+</section>
+<section id="hapus-data-kosong">
+<h3>Hapus Data Kosong<a class="headerlink" href="#hapus-data-kosong" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -690,8 +730,10 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>##Cleansing Data
-Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, simbol, atau karakter yang tidak relevan.</p>
+</section>
+<section id="case-folding">
+<h3>Case Folding<a class="headerlink" href="#case-folding" title="Permalink to this heading">#</a></h3>
+<p>Digunakan untuk membersihkan teks dalam kolom ‘Abstrak’. Ini menghapus karakter-karakter yang tidak relevan seperti tanda baca dan mengubah teks menjadi daftar kata-kata.Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, simbol, angka atau karakter yang tidak relevan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">string</span>
@@ -728,7 +770,9 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 </div>
 </div>
-<p>Implementasi Fungsi Pada Abstrak</p>
+</section>
+<section id="implementasi-fungsi-pada-abstrak">
+<h3>Implementasi Fungsi Pada Abstrak<a class="headerlink" href="#implementasi-fungsi-pada-abstrak" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">cleaning</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -738,7 +782,7 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-76d84fcc-597a-48d0-a6a8-f7d5c97c59ff" class="colab-df-container">
+  <div id="df-0936d0fb-4c97-45af-9b68-b84672f9cfbc" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -823,7 +867,7 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-76d84fcc-597a-48d0-a6a8-f7d5c97c59ff')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-0936d0fb-4c97-45af-9b68-b84672f9cfbc')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -875,12 +919,12 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 
     <script>
       const buttonEl =
-        document.querySelector('#df-76d84fcc-597a-48d0-a6a8-f7d5c97c59ff button.colab-df-convert');
+        document.querySelector('#df-0936d0fb-4c97-45af-9b68-b84672f9cfbc button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-76d84fcc-597a-48d0-a6a8-f7d5c97c59ff');
+        const element = document.querySelector('#df-0936d0fb-4c97-45af-9b68-b84672f9cfbc');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -903,7 +947,9 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
   </div>
   </div></div>
 </div>
-<p>##Tokenize Data</p>
+</section>
+<section id="tokenize-data">
+<h3>Tokenize Data<a class="headerlink" href="#tokenize-data" title="Permalink to this heading">#</a></h3>
 <p>Memecah teks menjadi kata-kata atau token-token yang lebih kecil. Tokenisasi biasanya melibatkan pemisahan berdasarkan spasi, tetapi dapat juga melibatkan pemisahan berdasarkan tanda baca.</p>
 <p>Import Libary NLTK</p>
 <div class="cell docutils container">
@@ -918,57 +964,78 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading collection &#39;popular&#39;
 [nltk_data]    | 
 [nltk_data]    | Downloading package cmudict to /root/nltk_data...
-[nltk_data]    |   Package cmudict is already up-to-date!
+[nltk_data]    |   Unzipping corpora/cmudict.zip.
 [nltk_data]    | Downloading package gazetteers to /root/nltk_data...
-[nltk_data]    |   Package gazetteers is already up-to-date!
+[nltk_data]    |   Unzipping corpora/gazetteers.zip.
 [nltk_data]    | Downloading package genesis to /root/nltk_data...
-[nltk_data]    |   Package genesis is already up-to-date!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/genesis.zip.
 [nltk_data]    | Downloading package gutenberg to /root/nltk_data...
-[nltk_data]    |   Package gutenberg is already up-to-date!
-[nltk_data]    | Downloading package inaugural to /root/nltk_data...
-[nltk_data]    |   Package inaugural is already up-to-date!
+[nltk_data]    |   Unzipping corpora/gutenberg.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package inaugural to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/inaugural.zip.
 [nltk_data]    | Downloading package movie_reviews to
 [nltk_data]    |     /root/nltk_data...
-[nltk_data]    |   Package movie_reviews is already up-to-date!
-[nltk_data]    | Downloading package names to /root/nltk_data...
-[nltk_data]    |   Package names is already up-to-date!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/movie_reviews.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package names to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/names.zip.
 [nltk_data]    | Downloading package shakespeare to /root/nltk_data...
-[nltk_data]    |   Package shakespeare is already up-to-date!
-[nltk_data]    | Downloading package stopwords to /root/nltk_data...
-[nltk_data]    |   Package stopwords is already up-to-date!
+[nltk_data]    |   Unzipping corpora/shakespeare.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package stopwords to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/stopwords.zip.
 [nltk_data]    | Downloading package treebank to /root/nltk_data...
-[nltk_data]    |   Package treebank is already up-to-date!
-[nltk_data]    | Downloading package twitter_samples to
+[nltk_data]    |   Unzipping corpora/treebank.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package twitter_samples to
 [nltk_data]    |     /root/nltk_data...
-[nltk_data]    |   Package twitter_samples is already up-to-date!
-[nltk_data]    | Downloading package omw to /root/nltk_data...
-[nltk_data]    |   Package omw is already up-to-date!
+[nltk_data]    |   Unzipping corpora/twitter_samples.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package omw to /root/nltk_data...
 [nltk_data]    | Downloading package omw-1.4 to /root/nltk_data...
-[nltk_data]    |   Package omw-1.4 is already up-to-date!
-[nltk_data]    | Downloading package wordnet to /root/nltk_data...
-[nltk_data]    |   Package wordnet is already up-to-date!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package wordnet to /root/nltk_data...
 [nltk_data]    | Downloading package wordnet2021 to /root/nltk_data...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Package wordnet2021 is already up-to-date!
-[nltk_data]    | Downloading package wordnet31 to /root/nltk_data...
-[nltk_data]    |   Package wordnet31 is already up-to-date!
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package wordnet31 to /root/nltk_data...
 [nltk_data]    | Downloading package wordnet_ic to /root/nltk_data...
-[nltk_data]    |   Package wordnet_ic is already up-to-date!
-[nltk_data]    | Downloading package words to /root/nltk_data...
-[nltk_data]    |   Package words is already up-to-date!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/wordnet_ic.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package words to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/words.zip.
 [nltk_data]    | Downloading package maxent_ne_chunker to
 [nltk_data]    |     /root/nltk_data...
-[nltk_data]    |   Package maxent_ne_chunker is already up-to-date!
-[nltk_data]    | Downloading package punkt to /root/nltk_data...
-[nltk_data]    |   Package punkt is already up-to-date!
-[nltk_data]    | Downloading package snowball_data to
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping chunkers/maxent_ne_chunker.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package punkt to /root/nltk_data...
+[nltk_data]    |   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package snowball_data to
 [nltk_data]    |     /root/nltk_data...
-[nltk_data]    |   Package snowball_data is already up-to-date!
 [nltk_data]    | Downloading package averaged_perceptron_tagger to
 [nltk_data]    |     /root/nltk_data...
-[nltk_data]    |   Package averaged_perceptron_tagger is already up-
-[nltk_data]    |       to-date!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping taggers/averaged_perceptron_tagger.zip.
 [nltk_data]    | 
 [nltk_data]  Done downloading collection popular
 </pre></div>
@@ -978,7 +1045,9 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 </div>
 </div>
-<p>Implementasi Libary</p>
+</section>
+<section id="implementasi-libary">
+<h3>Implementasi Libary<a class="headerlink" href="#implementasi-libary" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -988,7 +1057,7 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ab561209-2f39-4f73-bb00-dba95f225d25" class="colab-df-container">
+  <div id="df-1ee6cd82-54a1-42aa-b1d8-0e3cb62b113b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1043,7 +1112,7 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ab561209-2f39-4f73-bb00-dba95f225d25')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1ee6cd82-54a1-42aa-b1d8-0e3cb62b113b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1095,12 +1164,12 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ab561209-2f39-4f73-bb00-dba95f225d25 button.colab-df-convert');
+        document.querySelector('#df-1ee6cd82-54a1-42aa-b1d8-0e3cb62b113b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ab561209-2f39-4f73-bb00-dba95f225d25');
+        const element = document.querySelector('#df-1ee6cd82-54a1-42aa-b1d8-0e3cb62b113b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1123,11 +1192,14 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
   </div>
   </div></div>
 </div>
+</section>
 <section id="stop-word">
-<h2>Stop Word<a class="headerlink" href="#stop-word" title="Permalink to this heading">#</a></h2>
+<h3>Stop Word<a class="headerlink" href="#stop-word" title="Permalink to this heading">#</a></h3>
 <p>Stopword adalah kata-kata umum yang sering tidak memiliki nilai dalam analisis teks. Fungsi stopwordText digunakan untuk menghapus stopword dari token-token kata yang telah dihasilkan.</p>
-<p>Token-token kata yang telah dibersihkan dan memiliki stopword yang dihapus digabungkan kembali menjadi teks utuh dan disimpan dalam kolom ‘Full Text’.</p>
-<p>Import Libary NLTK Stopwords</p>
+<p>Token-token kata yang telah dibersihkan dan memiliki stopword yang dihapus digabungkan kembali menjadi teks utuh dan disimpan dalam kolom ‘abstrak_tokens’.</p>
+</section>
+<section id="import-libary-nltk-stopwords">
+<h3>Import Libary NLTK Stopwords<a class="headerlink" href="#import-libary-nltk-stopwords" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
@@ -1171,7 +1243,7 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-81c338b4-764d-42ad-b010-54f3b82b6ed0" class="colab-df-container">
+  <div id="df-615801f6-df0b-49c2-88ea-c96160509b67" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1226,7 +1298,7 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-81c338b4-764d-42ad-b010-54f3b82b6ed0')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-615801f6-df0b-49c2-88ea-c96160509b67')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1278,12 +1350,12 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 
     <script>
       const buttonEl =
-        document.querySelector('#df-81c338b4-764d-42ad-b010-54f3b82b6ed0 button.colab-df-convert');
+        document.querySelector('#df-615801f6-df0b-49c2-88ea-c96160509b67 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-81c338b4-764d-42ad-b010-54f3b82b6ed0');
+        const element = document.querySelector('#df-615801f6-df0b-49c2-88ea-c96160509b67');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1306,11 +1378,13 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
   </div>
   </div></div>
 </div>
-<p>##Stemming</p>
-<blockquote>
-<div><p>Mengubah kata menjadi bentuk paling dasar</p>
-</div></blockquote>
-<p>Import Libary Sastrawi</p>
+</section>
+<section id="stemming">
+<h3>Stemming<a class="headerlink" href="#stemming" title="Permalink to this heading">#</a></h3>
+<p>Mengubah kata menjadi bentuk paling dasar</p>
+</section>
+<section id="import-libary-sastrawi">
+<h3>Import Libary Sastrawi<a class="headerlink" href="#import-libary-sastrawi" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>sastrawi
@@ -1318,7 +1392,18 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">122.9/209.7 kB</span> <span class=" -Color -Color-Red">3.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: sastrawi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed sastrawi-1.0.1
 </pre></div>
 </div>
 </div>
@@ -1364,10 +1449,10 @@ Menghapus Karakter Khusus: Menghilangkan karakter khusus seperti tanda baca, sim
 </div>
 </div>
 </div>
-<p>Ekstraksi Fitur</p>
+<p>##Ekstraksi Fitur</p>
 </section>
 <section id="term-frequency">
-<h2>Term Frequency<a class="headerlink" href="#term-frequency" title="Permalink to this heading">#</a></h2>
+<h3>Term Frequency<a class="headerlink" href="#term-frequency" title="Permalink to this heading">#</a></h3>
 <p>Fungsi term_freq digunakan untuk melakukan Term Frequency (TF) vectorization pada teks yang telah dibersihkan dan memiliki stopword yang dihapus. Hasilnya adalah representasi numerik dari dokumen menggunakan skema Term Frequency.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1421,7 +1506,7 @@ Length: 8588, dtype: object
 </div>
 </section>
 <section id="one-hot-encoding">
-<h2>One Hot Encoding<a class="headerlink" href="#one-hot-encoding" title="Permalink to this heading">#</a></h2>
+<h3>One Hot Encoding<a class="headerlink" href="#one-hot-encoding" title="Permalink to this heading">#</a></h3>
 <p>Fungsi One Hot Encoder Using Pandas
 Fungsi pandasOneHotEncoder digunakan untuk melakukan one-hot encoding pada token-token kata yang telah dibersihkan dan memiliki stopword yang dihapus. Hasilnya adalah DataFrame yang mewakili keberadaan atau ketiadaan setiap kata dalam setiap dokumen.</p>
 <div class="cell docutils container">
@@ -1435,7 +1520,7 @@ Fungsi pandasOneHotEncoder digunakan untuk melakukan one-hot encoding pada token
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2f9d5076-e99a-465d-9216-87cec28f5417" class="colab-df-container">
+  <div id="df-79b42b85-000d-4a34-a045-13dc59d137ee" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1749,7 +1834,7 @@ Fungsi pandasOneHotEncoder digunakan untuk melakukan one-hot encoding pada token
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-2f9d5076-e99a-465d-9216-87cec28f5417')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-79b42b85-000d-4a34-a045-13dc59d137ee')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1801,12 +1886,12 @@ Fungsi pandasOneHotEncoder digunakan untuk melakukan one-hot encoding pada token
 
     <script>
       const buttonEl =
-        document.querySelector('#df-2f9d5076-e99a-465d-9216-87cec28f5417 button.colab-df-convert');
+        document.querySelector('#df-79b42b85-000d-4a34-a045-13dc59d137ee button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-2f9d5076-e99a-465d-9216-87cec28f5417');
+        const element = document.querySelector('#df-79b42b85-000d-4a34-a045-13dc59d137ee');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1836,8 +1921,10 @@ Fungsi pandasOneHotEncoder digunakan untuk melakukan one-hot encoding pada token
 </div>
 </div>
 </div>
-<p>##TF-IDF
-Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah dibersihkan dan memiliki stopword yang dihapus. Hasilnya adalah representasi numerik dari dokumen menggunakan skema TF-IDF.</p>
+</section>
+<section id="tf-idf">
+<h3>TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this heading">#</a></h3>
+<p>Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah dibersihkan dan memiliki stopword yang dihapus. Hasilnya adalah representasi numerik dari dokumen menggunakan skema TF-IDF.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
@@ -1852,7 +1939,7 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-057730ae-3dec-4191-8d87-92ae8b47bfb7" class="colab-df-container">
+  <div id="df-1a33c544-9abb-438f-a0bd-9f7cfb69cd0c" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2166,7 +2253,7 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-057730ae-3dec-4191-8d87-92ae8b47bfb7')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1a33c544-9abb-438f-a0bd-9f7cfb69cd0c')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2218,12 +2305,12 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
 
     <script>
       const buttonEl =
-        document.querySelector('#df-057730ae-3dec-4191-8d87-92ae8b47bfb7 button.colab-df-convert');
+        document.querySelector('#df-1a33c544-9abb-438f-a0bd-9f7cfb69cd0c button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-057730ae-3dec-4191-8d87-92ae8b47bfb7');
+        const element = document.querySelector('#df-1a33c544-9abb-438f-a0bd-9f7cfb69cd0c');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2253,7 +2340,10 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
 </div>
 </div>
 </div>
-<p>Bobot Kata Dalam Setiap Dokumen</p>
+</section>
+<section id="bobot-kata-dalam-setiap-dokumen">
+<h3>Bobot Kata Dalam Setiap Dokumen<a class="headerlink" href="#bobot-kata-dalam-setiap-dokumen" title="Permalink to this heading">#</a></h3>
+<p>Menampilkan dalam bentuk data frame bobot kata pada dokumen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_tfidf</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
@@ -2265,7 +2355,7 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7817360a-a48e-4dd8-a226-64f046b02231" class="colab-df-container">
+  <div id="df-7bdb3490-ccb4-4981-a929-0220ec7595a9" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2579,7 +2669,7 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-7817360a-a48e-4dd8-a226-64f046b02231')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7bdb3490-ccb4-4981-a929-0220ec7595a9')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2631,12 +2721,12 @@ Fungsi tfidf digunakan untuk melakukan TF-IDF vectorization pada teks yang telah
 
     <script>
       const buttonEl =
-        document.querySelector('#df-7817360a-a48e-4dd8-a226-64f046b02231 button.colab-df-convert');
+        document.querySelector('#df-7bdb3490-ccb4-4981-a929-0220ec7595a9 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-7817360a-a48e-4dd8-a226-64f046b02231');
+        const element = document.querySelector('#df-7bdb3490-ccb4-4981-a929-0220ec7595a9');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2690,8 +2780,8 @@ Length: 816, dtype: float64
 </div>
 </section>
 <section id="log-frequency">
-<h2>Log Frequency<a class="headerlink" href="#log-frequency" title="Permalink to this heading">#</a></h2>
-<p>Fungsi logarithm_freq digunakan untuk melakukan transformasi frekuensi logaritmik pada data Term Frequency. Ini membantu dalam mengurangi dampak dominasi kata-kata yang sangat umum dalam analisis teks.</p>
+<h3>Log Frequency<a class="headerlink" href="#log-frequency" title="Permalink to this heading">#</a></h3>
+<p>Fungsi logarithm frequency digunakan untuk melakukan transformasi frekuensi logaritmik pada data Term Frequency. Ini membantu dalam mengurangi dampak dominasi kata-kata yang sangat umum dalam analisis teks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df_countvect</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
@@ -2703,7 +2793,7 @@ Length: 816, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-34cbb88d-61d5-4a1c-8fc8-ef43b68c6ca3" class="colab-df-container">
+  <div id="df-3aa2ff2f-fbce-43f4-a1a2-71f74a69df99" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3017,7 +3107,7 @@ Length: 816, dtype: float64
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-34cbb88d-61d5-4a1c-8fc8-ef43b68c6ca3')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-3aa2ff2f-fbce-43f4-a1a2-71f74a69df99')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3069,12 +3159,12 @@ Length: 816, dtype: float64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-34cbb88d-61d5-4a1c-8fc8-ef43b68c6ca3 button.colab-df-convert');
+        document.querySelector('#df-3aa2ff2f-fbce-43f4-a1a2-71f74a69df99 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-34cbb88d-61d5-4a1c-8fc8-ef43b68c6ca3');
+        const element = document.querySelector('#df-3aa2ff2f-fbce-43f4-a1a2-71f74a69df99');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3104,7 +3194,10 @@ Length: 816, dtype: float64
 </div>
 </div>
 </div>
-<p>Skip Gram</p>
+</section>
+<section id="skip-gram">
+<h3>Skip Gram<a class="headerlink" href="#skip-gram" title="Permalink to this heading">#</a></h3>
+<p>Menampilkan kata-kata yang mirip dengan kata target beserta nilai kemiripannya. Dengan demikian, code dibawah ini menghasilkan model Word2Vec dari data teks, kemudian mencari kata-kata yang mirip dengan kata target yang telah ditentukan (word).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gensim</span>
@@ -3127,16 +3220,16 @@ Length: 816, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kata yang mirip dengan &#39;machine&#39;:
-alat: 0.4178
-pengenalan: 0.4096
-pengetahuan: 0.4004
-kondisi: 0.3943
-sumenep: 0.3866
-dinilai: 0.3856
-server: 0.3835
-reality: 0.3825
-bayes: 0.3806
-e: 0.3799
+alat: 0.4071
+pengenalan: 0.3963
+pengetahuan: 0.3899
+kondisi: 0.3824
+server: 0.3799
+sumenep: 0.3736
+e: 0.3726
+dinilai: 0.3726
+jasa: 0.3725
+reality: 0.3703
 </pre></div>
 </div>
 </div>
@@ -3196,15 +3289,17 @@ pengenalan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kesamaan kosakata antara &#39;gerak&#39; dan &#39;sistem&#39;: 0.3162
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kesamaan kosakata antara &#39;gerak&#39; dan &#39;sistem&#39;: 0.3629
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+</section>
 <section id="lda-modelling">
 <h2>LDA Modelling<a class="headerlink" href="#lda-modelling" title="Permalink to this heading">#</a></h2>
 <p>LDA adalah algoritma yang digunakan untuk mengidentifikasi topik-topik utama dalam dokumen. Dalam contoh ini, kita ingin mengidentifikasi dua topik. LDA memodelkan dokumen sebagai campuran dari topik-topik ini dan menghasilkan distribusi topik untuk setiap dokumen.</p>
+<p>Hal pertama yang harus dilakukan adalah import library yang akan digunakan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">LatentDirichletAllocation</span><span class="p">,</span> <span class="n">TruncatedSVD</span>
@@ -3212,7 +3307,9 @@ pengenalan
 </div>
 </div>
 </div>
-<p>Modelling Data</p>
+<section id="modelling-data">
+<h3>Modelling Data<a class="headerlink" href="#modelling-data" title="Permalink to this heading">#</a></h3>
+<p>Code ini melakukan pelatihan model LDA dengan data dokumen yang direpresentasikan dalam bentuk matriks X_count, dan menghasilkan dua matriks bobot: w1 yang menyimpan bobot topik-dokumen dan h1 yang menyimpan bobot kata-topik.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lda_model</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">doc_topic_prior</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">topic_word_prior</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -3241,7 +3338,10 @@ pengenalan
 </div>
 </div>
 </div>
-<p>##Proporsi Topik Pada Dokumen</p>
+</section>
+<section id="proporsi-topik-pada-dokumen">
+<h3>Proporsi Topik Pada Dokumen<a class="headerlink" href="#proporsi-topik-pada-dokumen" title="Permalink to this heading">#</a></h3>
+<p>code ini dapat membantu mengorganisir kata-kata kunci yang memiliki bobot tertinggi dari matriks bobot kata-topik (h1) untuk setiap topik yang dihasilkan oleh model LDA.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_word</span> <span class="o">=</span> <span class="mi">100</span>
@@ -3264,7 +3364,7 @@ pengenalan
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-5e86d553-f0d0-4bba-9b20-bd424a544402" class="colab-df-container">
+  <div id="df-b7255ab7-bd2a-4070-9f0f-f275f0c6c287" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3422,7 +3522,7 @@ pengenalan
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-5e86d553-f0d0-4bba-9b20-bd424a544402')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b7255ab7-bd2a-4070-9f0f-f275f0c6c287')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3474,12 +3574,12 @@ pengenalan
 
     <script>
       const buttonEl =
-        document.querySelector('#df-5e86d553-f0d0-4bba-9b20-bd424a544402 button.colab-df-convert');
+        document.querySelector('#df-b7255ab7-bd2a-4070-9f0f-f275f0c6c287 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-5e86d553-f0d0-4bba-9b20-bd424a544402');
+        const element = document.querySelector('#df-b7255ab7-bd2a-4070-9f0f-f275f0c6c287');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3502,6 +3602,7 @@ pengenalan
   </div>
   </div></div>
 </div>
+<p>Code dibawah menciptakan sebuah DataFrame baru (df_doc_topic) yang berisi bobot topik untuk setiap dokumen, dan kemudian menambahkan kolom ‘Kelas’ dari DataFrame awal df ke dalam DataFrame baru tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colnames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Topic&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lda_model</span><span class="o">.</span><span class="n">n_components</span><span class="p">)]</span>
@@ -3520,7 +3621,7 @@ pengenalan
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-f1cbda82-2ae3-4ea6-8e7a-28f9fa278a7b" class="colab-df-container">
+  <div id="df-7d9561a7-a11d-4d71-8cf7-2651d658abbd" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3630,7 +3731,7 @@ pengenalan
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-f1cbda82-2ae3-4ea6-8e7a-28f9fa278a7b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7d9561a7-a11d-4d71-8cf7-2651d658abbd')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -3682,12 +3783,12 @@ pengenalan
 
     <script>
       const buttonEl =
-        document.querySelector('#df-f1cbda82-2ae3-4ea6-8e7a-28f9fa278a7b button.colab-df-convert');
+        document.querySelector('#df-7d9561a7-a11d-4d71-8cf7-2651d658abbd button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-f1cbda82-2ae3-4ea6-8e7a-28f9fa278a7b');
+        const element = document.querySelector('#df-7d9561a7-a11d-4d71-8cf7-2651d658abbd');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -7789,9 +7890,7 @@ Topik 3: 0.9667
 
 Dokumen 809:
 Topik 1: 0.0157
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topik 2: 0.0157
+Topik 2: 0.0157
 Topik 3: 0.9686
 
 Dokumen 810:
@@ -7884,7 +7983,10 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
 </div>
 </div>
 </div>
-<p>##Proporsi Topik Pada Kata</p>
+</section>
+</section>
+<section id="proporsi-kata-pada-topik">
+<h2>Proporsi kata pada topik<a class="headerlink" href="#proporsi-kata-pada-topik" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_word_propotion</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">components_</span> <span class="o">/</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">components_</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
@@ -7898,7 +8000,7 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2c4f00b9-c651-4404-b533-563682b37f84" class="colab-df-container">
+  <div id="df-b638aece-1a98-48e5-a90a-425d98776440" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -8008,7 +8110,7 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-2c4f00b9-c651-4404-b533-563682b37f84')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b638aece-1a98-48e5-a90a-425d98776440')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -8060,12 +8162,12 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
 
     <script>
       const buttonEl =
-        document.querySelector('#df-2c4f00b9-c651-4404-b533-563682b37f84 button.colab-df-convert');
+        document.querySelector('#df-b638aece-1a98-48e5-a90a-425d98776440 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-2c4f00b9-c651-4404-b533-563682b37f84');
+        const element = document.querySelector('#df-b638aece-1a98-48e5-a90a-425d98776440');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -8088,8 +8190,9 @@ sistem, data, metode, hasil, nilai, citra, proses, penelitian, keputusan, inform
   </div>
   </div></div>
 </div>
-<p>Akurasi Dengan naive bayes</p>
-<p>##Naive Bayes</p>
+</section>
+<section id="modelling-dengan-naive-bayes">
+<h2>Modelling dengan Naive Bayes<a class="headerlink" href="#modelling-dengan-naive-bayes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -8149,6 +8252,51 @@ weighted avg       0.69      0.67      0.65       165
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">LatentDirichletAllocation</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="c1"># Membuat dan melatih model LDA dengan nilai &#39;n&#39; yang sesuai</span>
+    <span class="n">lda_model</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">doc_topic_prior</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">topic_word_prior</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">X_lda</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="c1"># Membagi data menjadi train dan test set</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_lda</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="c1"># Membuat dan melatih model Naive Bayes</span>
+    <span class="n">naive_bayes_classifier</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
+    <span class="n">naive_bayes_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="c1"># Evaluasi model atau lakukan tindakan lain yang Anda inginkan</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">naive_bayes_classifier</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;n_components&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="n">accuracy</span><span class="p">})</span>
+
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># Rename the n_components values to &quot;topik 2,&quot; &quot;topik 3,&quot; and so on</span>
+<span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;n_components&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;topik &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;n_components&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Create a bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;n_components&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jumlah Topik&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Akurasi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/354f35a95d8437d4dab86f26e591eeb4c7c0c39fadc9273dcaaacb0dacd8ab80.png" src="_images/354f35a95d8437d4dab86f26e591eeb4c7c0c39fadc9273dcaaacb0dacd8ab80.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -8180,7 +8328,7 @@ weighted avg       0.69      0.67      0.65       165
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="notebooks.html"
@@ -8196,7 +8344,7 @@ weighted avg       0.69      0.67      0.65       165
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tugas Berita</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -8215,11 +8363,35 @@ weighted avg       0.69      0.67      0.65       165
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word">Stop Word</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency">Term Frequency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">One Hot Encoding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-frequency">Log Frequency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-modelling">LDA Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-import-library">Install &amp; Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-data">Import Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-data">Cleaning Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-data-kosong">Cek Data Kosong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hapus-data-kosong">Hapus Data Kosong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding">Case Folding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-fungsi-pada-abstrak">Implementasi Fungsi Pada Abstrak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize-data">Tokenize Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-libary">Implementasi Libary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word">Stop Word</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libary-nltk-stopwords">Import Libary NLTK Stopwords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libary-sastrawi">Import Libary Sastrawi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-frequency">Term Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">One Hot Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bobot-kata-dalam-setiap-dokumen">Bobot Kata Dalam Setiap Dokumen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-frequency">Log Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skip-gram">Skip Gram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lda-modelling">LDA Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-data">Modelling Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proporsi-topik-pada-dokumen">Proporsi Topik Pada Dokumen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proporsi-kata-pada-topik">Proporsi kata pada topik</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-dengan-naive-bayes">Modelling dengan Naive Bayes</a></li>
 </ul>
   </nav></div>
 
@@ -8234,13 +8406,14 @@ weighted avg       0.69      0.67      0.65       165
   <div class="footer-item">
     
 <p class="component-author">
-By Aulya Miftahkhul Hikmah
+By Aulya Miftahkhul Hikmah/200411100050
 </p>
 
   </div>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -8267,8 +8440,8 @@ By Aulya Miftahkhul Hikmah
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
