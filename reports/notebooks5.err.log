@@ -30,8 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['def scraping_berita(halaman):', '    a = 1', '    data_list = []', '', '    for page in range(1, halaman + 1):']
+["kategori_list =  ['religi', 'sosial', 'pendidikan']", "k =  ['Religi', 'Sosial', 'Pendidikan']", '', 'jumlah_halaman = 15', '']
 ...
-['    # Menyimpan DataFrame ke dalam file CSV', "    df.to_csv('RadarJatim.csv', index=False, encoding='utf-8')", '', '# pemanggilan fungsi dengan jumlah halaman yang di scraping', 'scraping_berita(50)']
+['                    print(f"Data berhasil diambil - Kategori: {category}, Halaman: {page}, Judul: {headline}")', '', "                    writer.writerow({'Judul': headline, 'Content': artikel, 'Category': category})", '', 'scraping_berita(kategori_list, jumlah_halaman)']
 -------------------
 

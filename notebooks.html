@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PTA UNIVERSITAS TRUNOJOYO MADURA" href="notebooks2.html" />
+    <link rel="next" title="Preprocessing PTA dan LDA Modelling" href="notebooks2.html" />
     <link rel="prev" title="Selamat Datang" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,9 +170,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas PPW</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling PTA Trunojoyo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">PTA UNIVERSITAS TRUNOJOYO MADURA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks4.html">Perhitungan Manual PageRank</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Crawling PTA Trunojoyo</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html"><strong>Preprocessing PTA dan LDA Modelling</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks3.html"><strong>Crawling dan Preprocessing 1 Berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks4.html"><strong>Perhitungan Manual PageRank</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks5.html"><strong>Crawling Situs Berita 3 Kategori Sumber: radarjatim.com</strong></a></li>
 </ul>
 
     </div>
@@ -413,18 +415,19 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="crawling-pta-trunojoyo">
-<h1>Crawling PTA Trunojoyo<a class="headerlink" href="#crawling-pta-trunojoyo" title="Permalink to this heading">#</a></h1>
+<h1><strong>Crawling PTA Trunojoyo</strong><a class="headerlink" href="#crawling-pta-trunojoyo" title="Permalink to this heading">#</a></h1>
 <p>Crawling, atau yang dikenal sebagai web crawling, merupakan suatu proses otomatis yang dilakukan untuk mengekstrak informasi dari berbagai halaman web dengan cara mengakses dan mengambil data secara sistematis dari berbagai situs. Tujuan utama dari kegiatan crawling ini adalah untuk mengumpulkan informasi yang dapat digunakan untuk berbagai keperluan, seperti analisis data, pemantauan, pengindeksan, dan keperluan lainnya.
 Crawler ini melakukan kunjungan ke halaman-halaman web, mengekstrak konten, mengikuti tautan, dan secara terus-menerus berpindah di seluruh situs web untuk mengumpulkan data yang diperlukan. Proses crawling sangat umum digunakan dalam pengembangan mesin pencari, seperti Google, juga dalam kegiatan seperti analisis data web, riset pasar, dan berbagai aplikasi lainnya.</p>
-<p>Hal Pertama yang dilakukan adalah install library Beautifulsoup.
+<p>Hal Pertama yang dilakukan adalah install library Beautifulsoup
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">bs4</span> <span class="pre">import</span> <span class="pre">BeautifulSoup</span></code>.
 Beautiful Soup library merupakan salah satu perangkat yang sering dimanfaatkan untuk melakukan crawling dan mengekstrak data dari dokumen HTML dan XML. Dengan Beautiful Soup, pengguna dapat dengan mudah menavigasi dan memanipulasi struktur dokumen HTML. Library ini menyediakan metode yang sederhana untuk melakukan pencarian elemen berdasarkan tag, atribut, dan teks yang terdapat di dalam elemen tersebut.</p>
 <p>Lalu mengimport library yang dibutuhkan</p>
 <ul class="simple">
-<li><p>import requests</p></li>
-<li><p>import csv</p></li>
-<li><p>import pandas as pd</p></li>
-<li><p>from bs4 import BeautifulSoup</p></li>
-<li><p>import warnings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">requests</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">bs4</span> <span class="pre">import</span> <span class="pre">BeautifulSoup</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">warnings</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -448,7 +451,7 @@ Beautiful Soup library merupakan salah satu perangkat yang sering dimanfaatkan u
 </div>
 <section id="mengambil-data-prodi-teknik-informatika">
 <h2>Mengambil data prodi Teknik Informatika<a class="headerlink" href="#mengambil-data-prodi-teknik-informatika" title="Permalink to this heading">#</a></h2>
-<p>Mengambil data dari halaman tugas akhir prodi Teknik Informatika yang diberikan URL-nya. Ia mengekstrak judul tugas akhir, nama penulis, nama dosen pembimbing, dan abstrak dari halaman tersebut.</p>
+<p>Mengambil data dari halaman tugas akhir prodi Teknik Informatika yang diberikan URL-nya. Ia mengekstrak judul tugas akhir, nama penulis, nama dosen pembimbing I, nama dosen Pembimbing II, dan abstrak dari halaman tersebut.</p>
 <p>Pengambilan data ini dari halaman daftar tugas akhir. Ia mengambil URL halaman, mencari setiap elemen daftar tugas akhir, mengekstrak URL untuk halaman detail setiap tugas akhir,untuk mendapatkan informasi lebih lanjut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,11 +502,11 @@ Beautiful Soup library merupakan salah satu perangkat yang sering dimanfaatkan u
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="nn">&lt;ipython-input-2-1e80dc240576&gt;</span> in <span class="ni">&lt;cell line: 8&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> 
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1">#         print(link_abstrak)</span>
-<span class="ne">---&gt; </span><span class="mi">25</span>         <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link_abstrak</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>         <span class="n">soup_abstrak</span> <span class="o">=</span>  <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">results_abstrak</span> <span class="o">=</span> <span class="n">soup_abstrak</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> 
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pta.trunojoyo.ac.id/c_search/byprod/10/</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">38</span>     <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="k">if</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>         <span class="k">break</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="s2">&quot;&quot;&quot;</span>
@@ -595,18 +598,18 @@ Beautiful Soup library merupakan salah satu perangkat yang sering dimanfaatkan u
 <span class="g g-Whitespace">    </span><span class="mi">515</span><span class="s2">             server_side=server_side,</span>
 
 <span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">_create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span><span class="s2">                         # non-blocking</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span><span class="s2">                         raise ValueError(&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span><span class="s2">                     self.do_handshake()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span><span class="s2">             except (OSError, ValueError):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span><span class="s2">                 self.close()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span><span class="s2">                         # non-blocking</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span><span class="s2">                         raise ValueError(&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;)</span>
+<span class="ne">-&gt; </span><span class="mi">1100</span><span class="s2">                     self.do_handshake()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span><span class="s2">             except (OSError, ValueError):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span><span class="s2">                 self.close()</span>
 
 <span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">do_handshake</span><span class="nt">(self, block)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1340</span><span class="s2">             if timeout == 0.0 and block:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1341</span><span class="s2">                 self.settimeout(None)</span>
-<span class="ne">-&gt; </span><span class="mi">1342</span><span class="s2">             self._sslobj.do_handshake()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1343</span><span class="s2">         finally:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1344</span><span class="s2">             self.settimeout(timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1369</span><span class="s2">             if timeout == 0.0 and block:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span><span class="s2">                 self.settimeout(None)</span>
+<span class="ne">-&gt; </span><span class="mi">1371</span><span class="s2">             self._sslobj.do_handshake()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span><span class="s2">         finally:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span><span class="s2">             self.settimeout(timeout)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1010,7 +1013,7 @@ Beautiful Soup library merupakan salah satu perangkat yang sering dimanfaatkan u
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PTA UNIVERSITAS TRUNOJOYO MADURA</p>
+        <p class="prev-next-title"><strong>Preprocessing PTA dan LDA Modelling</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

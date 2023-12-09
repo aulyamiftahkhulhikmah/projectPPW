@@ -67,7 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks4';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="notebooks3.html" />
+    <link rel="next" title="Crawling Situs Berita 3 Kategori Sumber: radarjatim.com" href="notebooks5.html" />
+    <link rel="prev" title="Crawling dan Preprocessing 1 Berita" href="notebooks3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,9 +172,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas PPW</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Crawling PTA Trunojoyo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">PTA UNIVERSITAS TRUNOJOYO MADURA</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Perhitungan Manual PageRank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html"><strong>Crawling PTA Trunojoyo</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html"><strong>Preprocessing PTA dan LDA Modelling</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks3.html"><strong>Crawling dan Preprocessing 1 Berita</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Perhitungan Manual PageRank</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks5.html"><strong>Crawling Situs Berita 3 Kategori Sumber: radarjatim.com</strong></a></li>
 </ul>
 
     </div>
@@ -416,7 +419,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="perhitungan-manual-pagerank">
-<h1>Perhitungan Manual PageRank<a class="headerlink" href="#perhitungan-manual-pagerank" title="Permalink to this heading">#</a></h1>
+<h1><strong>Perhitungan Manual PageRank</strong><a class="headerlink" href="#perhitungan-manual-pagerank" title="Permalink to this heading">#</a></h1>
 <p>PageRank adalah algoritma yang dikembangkan oleh Larry Page dan Sergey Brin, pendiri Google.Tujuannya adalah mengukur dan memberi nilai pada pentingnya sebuah halaman web berdasarkan jumlah dan kualitas tautan yang mengarah ke halaman tersebut. PageRank bekerja dengan memberikan skor pada setiap halaman web, yang ditentukan oleh seberapa banyak tautan yang mengarah ke halaman tersebut dari halaman-halaman lain. Halaman dengan lebih banyak tautan berkualitas tinggi mendapatkan skor PageRank yang lebih tinggi. Algoritma ini digunakan oleh mesin pencari, seperti Google, untuk menyusun hasil pencarian dan memberikan prioritas pada halaman-halaman yang dianggap lebih otoritatif.</p>
 <section id="rumus-perhitungan-pagerank">
 <h2>Rumus Perhitungan PageRank<a class="headerlink" href="#rumus-perhitungan-pagerank" title="Permalink to this heading">#</a></h2>
@@ -448,7 +451,7 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-71c7b177-b75d-4294-b164-144e5a7749c5" class="colab-df-container">
+  <div id="df-f35adea3-bbe3-48e1-8a1d-25e2a28837cd" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -941,7 +944,7 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-71c7b177-b75d-4294-b164-144e5a7749c5')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f35adea3-bbe3-48e1-8a1d-25e2a28837cd')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -993,12 +996,12 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-71c7b177-b75d-4294-b164-144e5a7749c5 button.colab-df-convert');
+        document.querySelector('#df-f35adea3-bbe3-48e1-8a1d-25e2a28837cd button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-71c7b177-b75d-4294-b164-144e5a7749c5');
+        const element = document.querySelector('#df-f35adea3-bbe3-48e1-8a1d-25e2a28837cd');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1061,8 +1064,17 @@ PR(u) = (1-d) . \frac{1}{N} + d . \sum_{v∈Bu} \frac{PR(v)}{L(v)}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title"><strong>Crawling dan Preprocessing 1 Berita</strong></p>
       </div>
+    </a>
+    <a class="right-next"
+       href="notebooks5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Crawling Situs Berita 3 Kategori Sumber: radarjatim.com</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
